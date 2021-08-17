@@ -9,6 +9,7 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   ${({ dark }) =>
     dark &&
