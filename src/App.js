@@ -1,12 +1,10 @@
 import "./App.css";
-import {Wrapper} from './components/Wrapper'
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-      <Wrapper>Wrapper</Wrapper>
-      <Wrapper neutral>Neutral</Wrapper>
-      <Wrapper dark>Dark</Wrapper>
+    <div className="app">
+      <Header />
     </div>
   );
 }
