@@ -9,13 +9,12 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-content: center;
-
+    box-sizing: border-box;
 `;
 
 
 export const RequestsTitle = styled.h2`
-    width: 725px;
-    font-family: Suisse Intl;
+    font-family: 'SuisseInti-Book';
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
@@ -23,11 +22,12 @@ export const RequestsTitle = styled.h2`
     /* identical to box height */
     color: #000000;
     margin: 0 auto;
+    overflow: hidden;
 `;
 
 export const RequestsIntro = styled.p`
     width: 751px;
-    font-family: Suisse Intl;
+    font-family: 'SuisseInti-Book';
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -40,6 +40,7 @@ export const RequestsIntro = styled.p`
 
 export const CardWrapper = styled.div`
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -53,9 +54,10 @@ export const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"}
     background: transparent;
 
     &:nth-child(2) {
-        margin: 0 40px;
+        margin-left: 40px;
+        margin-right: 40px;
     }
-
+    
 `;
 
 

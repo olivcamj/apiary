@@ -22,6 +22,7 @@ const Title = styled.h1`
   margin: 0;
   font-size: 48px;
   line-height: 56px;
+  overflow: hidden;
 `;
 
 const TitleContrast = styled.span`

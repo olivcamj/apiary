@@ -28,7 +28,7 @@ const Requests= () => {
                 <RequestsCard
                     requestsImage={image3}
                     requestsTitle={'Data science'}
-                    requestsHash={'#analysis'}
+                    requestsHash={'#science'}
                 >
                 </RequestsCard>
             </CardWrapper>

@@ -14,8 +14,6 @@ export const GlobalButton = styled.button`
   background: ${props => props.orange ? "#FF9900" : "#FFFFFF"};
   color: ${props => props.orange ? "#FFFFFF" : "#FF9900"};
   
-  width: ${props => props.projects ? "400px" : "235px"};
-
   margin: ${props => props.marginb ? "0 20px" : "0"};
 
   height: ${props => props.header ? "60px" : "70px"};
