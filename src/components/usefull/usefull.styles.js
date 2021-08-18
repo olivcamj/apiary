@@ -15,18 +15,19 @@ export const Container = styled.div`
 
 
 export const UsefullTitle = styled.h2`
-    font-family: 'Suisse Intl';
+    font-family: 'SuisseInti-Book';
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
     line-height: 56px;
     color: #FFFFFF;
     margin: 0 auto;
+    overflow-y: hidden;
 `;
 
 export const UsefullIntro = styled.p`
     width: 840px;
-    font-family: 'Suisse Intl';
+    font-family: 'SuisseInti-Book';
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -58,3 +59,5 @@ export const UsefullCard = styled(GlobalCard).attrs({className: "usefullCard"})`
         margin: 0 40px;
     }
 `;
+
+

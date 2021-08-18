@@ -1,4 +1,4 @@
-import { Card, ProjectCover, ProjectWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, ReviewLink, UsefullWrapper, ImageWrapper, UsefullImage, UsefullTitle, UsefullText, RequestsImageWrapper, RequestsWrapper, RequestsImage, RequestsHash, RequestsTitle, } from './globalCard.styles';
+import { Card, ProjectCover, ProjectWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, ReviewLink, UsefullWrapper, ImageWrapper, UsefullImage, UsefullTitle, UsefullText, RequestsImageWrapper, RequestsWrapper, RequestsImage, RequestsHash, RequestsTitle, ChatText} from './globalCard.styles';
 
 
 export const GlobalCard = ({
@@ -24,6 +24,7 @@ export const GlobalCard = ({
     requestsImage,
     requestsHash,
     requestsTitle,
+    chatText
 }) => {
     return (
         <Card className={className}>
@@ -98,6 +99,10 @@ export const GlobalCard = ({
                     
                 </RequestsWrapper>
 
+            }
+
+            {chatText &&
+                <ChatText>{chatText}</ChatText>
             }
 
 
