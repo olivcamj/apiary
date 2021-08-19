@@ -20,7 +20,7 @@ export const GlobalButton = styled.button`
   font-size: ${props => props.header ? "16px" : "24px"};
   line-height: ${props => props.header ? "20px" : "28px"}28px;
 
-  font-family: Suisse Intl;
+  font-family: 'SuisseInti-Book';
   font-style: normal;
   font-weight: 400;
 
