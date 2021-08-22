@@ -100,7 +100,7 @@ export const ImageProjectIntro = styled.img`
         height: 452px;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 400px) {
         width: 320px;
         height: 320px;
     }

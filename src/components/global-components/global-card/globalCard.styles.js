@@ -133,7 +133,6 @@ export const ProjectLink = styled.a`
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
-    /* identical to box height, or 143% */
     text-align: right;
     color: #FF9900;
     position: absolute;
@@ -424,6 +423,11 @@ export const ImageWrapper = styled.div`
     align-content: center;
     justify-content: center;
     margin: 0 auto;
+
+    @media screen and (max-width: 400px) {
+        width: 300px;
+        height: 156px;
+    }
 `;
 
 export const UsefullImage = styled.img`
@@ -440,6 +444,13 @@ export const UsefullTitle = styled.h2`
     text-align: center;
     color: #FF9900;
     overflow: hidden;
+
+    @media screen and (max-width: 400px) {
+        width: 288px;
+        font-size: 32px;
+        line-height: 37px;
+        margin: 0 auto;
+    }
 `;
 
 export const UsefullText = styled.p`
@@ -449,10 +460,15 @@ export const UsefullText = styled.p`
     font-weight: normal;
     font-size: 20px;
     line-height: 30px;
-
     text-align: center;
-
     color: #DDDDDD;
+
+    @media screen and (max-width: 400px) {
+        width: 288px;
+        font-size: 20px;
+        line-height: 30px;
+        margin: 24px auto 0 auto;
+    }
 `;
 
 // REQUESTS SECTION
@@ -474,6 +490,11 @@ export const RequestsHash = styled.p`
     text-align: center;
     color: #FF9900;
     margin: 30px 0 10px 0;
+
+    @media screen and (max-width: 400px) {
+        font-size: 16px;
+        line-height: 20px;
+    }
 `;
 
 export const RequestsTitle = styled.h2`
@@ -485,6 +506,11 @@ export const RequestsTitle = styled.h2`
     text-align: center;
     color: #000000;
     margin: 0 0 20px 0;
+
+    @media screen and (max-width: 400px) {
+        font-size: 24px;
+        line-height: 30px;
+    }
 `;
 
 export const RequestsImageWrapper = styled.div`
@@ -494,6 +520,10 @@ export const RequestsImageWrapper = styled.div`
     align-content: center;
     justify-content: center;
     margin: 0 auto;
+    @media screen and (max-width: 400px) {
+        width: 300px;
+        height: 156px;
+    }
 `;
 
 export const RequestsImage = styled.img`

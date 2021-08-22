@@ -23,6 +23,12 @@ export const UsefullTitle = styled.h2`
     color: #FFFFFF;
     margin: 0 auto;
     overflow-y: hidden;
+
+    @media screen and (max-width: 400px) {
+        width: 288px; 
+        font-size: 32px;
+        line-height: 37px;
+    }
 `;
 
 export const UsefullIntro = styled.p`
@@ -35,6 +41,14 @@ export const UsefullIntro = styled.p`
     text-align: center;
     color: #DDDDDD;
     margin: 40px auto 80px auto;
+
+    @media screen and (max-width: 400px) {
+        width: 288px; 
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 40px;
+        text-align: left;
+    }
 `;
 
 
@@ -45,8 +59,8 @@ export const CardWrapper = styled.div.attrs({ className: "cards" })`
     align-content: center;
     margin: 0 auto;
 
-    @media screen and (max-width: 1360px) {
-        
+    @media screen and (max-width: 400px) {
+        flex-direction: column;
     }
 `;
 
@@ -61,14 +75,17 @@ export const UsefullCard = styled(GlobalCard).attrs({ className: "usefullCard" }
         margin: 0 40px;
     }
 
-    @media screen and (max-width: 1360px) {
-        &:nth-child(1) {
-            
-        }
+    @media screen and (max-width: 400px) {
+        width: 300px;
+        margin: 0 auto;
         &:nth-child(2) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 32px;
+        margin-bottom: 32px;
         }
-        &:nth-child(3) {
-        }
+
+        
     }
 `;
 
