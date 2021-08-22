@@ -4,7 +4,7 @@ import { GlobalCard } from '../global-components/global-card/globalCard';
 
 export const Container = styled.div`
     background: #1A1B22;    
-    width: 1440px;
+    max-width: 1440px;
     padding: 100px 0 150px 0;
     display: flex; 
     flex-direction: column;
@@ -38,25 +38,37 @@ export const UsefullIntro = styled.p`
 `;
 
 
-export const CardWrapper = styled.div.attrs({className: "cards"})`
+export const CardWrapper = styled.div.attrs({ className: "cards" })`
     width: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
-    
     margin: 0 auto;
 
+    @media screen and (max-width: 1360px) {
+        
+    }
 `;
 
-export const UsefullCard = styled(GlobalCard).attrs({className: "usefullCard"})`
+export const UsefullCard = styled(GlobalCard).attrs({ className: "usefullCard" })`
     border: none;
     border-radius: 0;
-    width: 400px;
+    max-width: 400px;
     height: 100%;
     background: transparent;
 
     &:nth-child(2) {
         margin: 0 40px;
+    }
+
+    @media screen and (max-width: 1360px) {
+        &:nth-child(1) {
+            
+        }
+        &:nth-child(2) {
+        }
+        &:nth-child(3) {
+        }
     }
 `;
 
