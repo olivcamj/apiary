@@ -1,4 +1,5 @@
 import { Container, CardWrapper, UsefullCard, UsefullTitle, UsefullIntro } from './usefull.styles';
+import { Wrapper } from '../Wrapper';
 
 import image1 from '../../images/resource-saving.png';
 import image2 from '../../images/publicize.png';
@@ -7,6 +8,7 @@ import image3 from '../../images/pr-boost.png';
 const Usefull = () => {
 
     return (
+        <Wrapper dark>
         <Container>
 
             <UsefullTitle>Why is it useful for your company?</UsefullTitle>
@@ -34,7 +36,7 @@ const Usefull = () => {
             </CardWrapper>
 
         </Container>
-
+        </Wrapper>
     )
 }
 
