@@ -6,7 +6,6 @@ import image2 from '../../images/publicize.png';
 import image3 from '../../images/pr-boost.png';
 
 const Usefull = () => {
-
     return (
         <Wrapper dark>
         <Container>
