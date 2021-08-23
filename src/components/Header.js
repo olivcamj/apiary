@@ -4,6 +4,7 @@ import { Wrapper } from './Wrapper';
 import HeaderImg from '../images/header.png';
 
 const HeaderContainer = styled.div`
+  width: 100%;
   max-width: 1280px;
   display: flex;
   flex-direction: row;
@@ -17,6 +18,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   overflow: visible;
+  overflow-x: visible;
 `
 
 const Title = styled.h1`
@@ -32,6 +34,7 @@ const TitleContrast = styled.span`
 
 const Image = styled.img`
   max-height: 530px;
+  width: auto;
 `;
 
 const HeaderButton = styled.button`

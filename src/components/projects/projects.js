@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectsLinkWrapper, ProjectCardWrapper, ProjectsBottomLinksWrapper, ProjectButton, ProjectsIntroWrapper, TextWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro, ProjectButtonBottom  } from './projects.style';
+import { Wrapper } from '../Wrapper';
 
 import BounceLoader from "react-spinners/ClipLoader";
 import { client } from '../../helper/client';
@@ -35,108 +36,110 @@ const Projects = () => {
     }, 2000);
 
     return (
-        <Container>
-            <ProjectsIntroWrapper>
-                <TextWrapper>
-                    <ProjectIntroTitle>Delegate tasks to those <br /> who enjoy them</ProjectIntroTitle>
-                    <ProjectIntroText>Check out the projects our students have done for <br /> companies in the USA and beyond</ProjectIntroText>
-                </TextWrapper>
-                <ImageIntroWrapper>
-                    <ImageProjectIntro src={imageIntro} />
-                </ImageIntroWrapper>
+        <Wrapper neutral>
+            <Container>
+                <ProjectsIntroWrapper>
+                    <TextWrapper>
+                        <ProjectIntroTitle>Delegate tasks to those <br /> who enjoy them</ProjectIntroTitle>
+                        <ProjectIntroText>Check out the projects our students have done for <br /> companies in the USA and beyond</ProjectIntroText>
+                    </TextWrapper>
+                    <ImageIntroWrapper>
+                        <ImageProjectIntro src={imageIntro} />
+                    </ImageIntroWrapper>
 
-            </ProjectsIntroWrapper>
-            <ProjectsLinkWrapper>
-                <ProjectButton onClick={() => handleId('projects')} projects >Web development</ProjectButton>
-                <ProjectButton onClick={() => handleId('dataAnalysisProjects')} projects >Data analysis</ProjectButton>
-                <ProjectButton projects >Data science</ProjectButton>
-            </ProjectsLinkWrapper>
+                </ProjectsIntroWrapper>
+                <ProjectsLinkWrapper>
+                    <ProjectButton onClick={() => handleId('projects')} projects >Web development</ProjectButton>
+                    <ProjectButton onClick={() => handleId('dataAnalysisProjects')} projects >Data analysis</ProjectButton>
+                    <ProjectButton projects >Data science</ProjectButton>
+                </ProjectsLinkWrapper>
 
-            {isLoaded
-                ?
-                
-                projectContent.map((element, i) => {
-                        console.log(element.fields.student1.fields.file.url)
-                    return (    
+                {isLoaded
+                    ?
                     
-                            <ProjectCardWrapper key={i}>
-                                <ProjectCard
-                                    projectTitle={element.fields.title}
-                                    projectIntro={element.fields.intro}
-                                    projectDate={element.fields.createdin}
-                                // href={}
-                                >
-                                    <CoverCard
-                                        coverPic={element.fields.coverImg.fields.file.url}
-                                    ></CoverCard>
-                                </ProjectCard>
+                    projectContent.map((element, i) => {
+                            console.log(element.fields.student1.fields.file.url)
+                        return (    
+                        
+                                <ProjectCardWrapper key={i}>
+                                    <ProjectCard
+                                        projectTitle={element.fields.title}
+                                        projectIntro={element.fields.intro}
+                                        projectDate={element.fields.createdin}
+                                    // href={}
+                                    >
+                                        <CoverCard
+                                            coverPic={element.fields.coverImg.fields.file.url}
+                                        ></CoverCard>
+                                    </ProjectCard>
 
-                                <BottomCards>
-                                    <ClientCard
-                                        clientName={element.fields.clientName}
-                                        clientPic={element.fields.clientPic.fields.file.url}
-                                        clientPos={element.fields.clientPos}
-                                        clientRev={element.fields.clientReview}
-                                    ></ClientCard>
-                                    <StudentsCard
-                                        studentsTeam={'Students Team'}
-                                        studentName1={element.fields.studentName4}
-                                        studentsReview={element.fields.studentText}
-                                        studentPic={element.fields.student1.fields.file.url}
-                                    ></StudentsCard>
-                                </BottomCards>
-                            </ProjectCardWrapper>
-                    )
-                })
+                                    <BottomCards>
+                                        <ClientCard
+                                            clientName={element.fields.clientName}
+                                            clientPic={element.fields.clientPic.fields.file.url}
+                                            clientPos={element.fields.clientPos}
+                                            clientRev={element.fields.clientReview}
+                                        ></ClientCard>
+                                        <StudentsCard
+                                            studentsTeam={'Students Team'}
+                                            studentName1={element.fields.studentName4}
+                                            studentsReview={element.fields.studentText}
+                                            studentPic={element.fields.student1.fields.file.url}
+                                        ></StudentsCard>
+                                    </BottomCards>
+                                </ProjectCardWrapper>
+                        )
+                    })
 
-                
-                :
-                <BounceLoader color={'#000'} loading={true} size={60} />
+                    
+                    :
+                    <BounceLoader color={'#000'} loading={true} size={60} />
 
-            }
+                }
 
-            {/* {isLoaded
-                ?
-                <>
-                    <ProjectCardWrapper>
-                        <ProjectCard
-                            projectTitle={projectContent[0].fields.title}
-                            projectIntro={projectContent[0].fields.intro}
-                            projectDate={projectContent[0].fields.createdin}
-                        // href={}
-                        >
-                            <CoverCard
-                                coverPic={projectContent[0].fields.coverImg.fields.file.url}
-                            ></CoverCard>
-                        </ProjectCard>
+                {/* {isLoaded
+                    ?
+                    <>
+                        <ProjectCardWrapper>
+                            <ProjectCard
+                                projectTitle={projectContent[0].fields.title}
+                                projectIntro={projectContent[0].fields.intro}
+                                projectDate={projectContent[0].fields.createdin}
+                            // href={}
+                            >
+                                <CoverCard
+                                    coverPic={projectContent[0].fields.coverImg.fields.file.url}
+                                ></CoverCard>
+                            </ProjectCard>
 
-                        <BottomCards>
-                            <ClientCard
-                                clientName={projectContent[0].fields.clientName}
-                                clientPic={projectContent[0].fields.clientPic.fields.file.url}
-                                clientPos={projectContent[0].fields.clientPos}
-                                clientRev={projectContent[0].fields.clientReview}
-                            ></ClientCard>
-                            <StudentsCard
-                                studentsTeam={'Students Team'}
-                                studentName1={projectContent[0].fields.studentName4}
-                                studentsReview={projectContent[0].fields.studentText}
-                                studentPic={projectContent[0].fields.student1.fields.file.url}
-                            ></StudentsCard>
-                        </BottomCards>
-                    </ProjectCardWrapper>
-                </>
+                            <BottomCards>
+                                <ClientCard
+                                    clientName={projectContent[0].fields.clientName}
+                                    clientPic={projectContent[0].fields.clientPic.fields.file.url}
+                                    clientPos={projectContent[0].fields.clientPos}
+                                    clientRev={projectContent[0].fields.clientReview}
+                                ></ClientCard>
+                                <StudentsCard
+                                    studentsTeam={'Students Team'}
+                                    studentName1={projectContent[0].fields.studentName4}
+                                    studentsReview={projectContent[0].fields.studentText}
+                                    studentPic={projectContent[0].fields.student1.fields.file.url}
+                                ></StudentsCard>
+                            </BottomCards>
+                        </ProjectCardWrapper>
+                    </>
 
-                :
-                <BounceLoader color={'#000'} loading={true} size={60} />
-            } */}
+                    :
+                    <BounceLoader color={'#000'} loading={true} size={60} />
+                } */}
 
-            <ProjectsBottomLinksWrapper>
-                <ProjectButtonBottom marginb href={"/"} target={"_blank"}>More projects...</ProjectButtonBottom>
-                <ProjectButtonBottom marginb orange href={"/"} target={"_blank"}>Delegate a task</ProjectButtonBottom>
-            </ProjectsBottomLinksWrapper>
+                <ProjectsBottomLinksWrapper>
+                    <ProjectButtonBottom marginb href={"/"} target={"_blank"}>More projects...</ProjectButtonBottom>
+                    <ProjectButtonBottom marginb orange href={"/"} target={"_blank"}>Delegate a task</ProjectButtonBottom>
+                </ProjectsBottomLinksWrapper>
 
-        </Container>
+            </Container>
+        </Wrapper>
     )
 }
 

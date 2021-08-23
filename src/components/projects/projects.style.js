@@ -5,9 +5,9 @@ import { GlobalButton } from '../global-components/global-components';
 
 
 export const Container = styled.div`
-    background-color: #E5E5E5;
-    padding: 100px 0 150px 0;
-    max-width: 1440px;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,15 +15,15 @@ export const Container = styled.div`
 `;
 
 export const ProjectsIntroWrapper = styled.div`
-    width: 1280px;
     display: flex;
     justify-content: space-between;
     align-content: center;
-    margin: 0 auto 60px auto;    
+    margin: 0 auto 60px auto;
+    width: 100%;   
 `;
 
 export const TextWrapper = styled.div`
-    width: 620px;
+    max-width: 620px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,32 +31,43 @@ export const TextWrapper = styled.div`
 `;
 
 export const ProjectIntroTitle = styled.h2`
-    font-family: 'SuisseInti-Book';
+    font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
     line-height: 56px;
     color: #000000;
     margin: 0;
-    overflow: hidden;
+    width: 100%;
+
+    @media screen and (max-width: 600px) {
+        font-size: 34px;
+        line-height: 40px;
+    }
 `;
 
 export const ProjectIntroText = styled.p`
-    font-family: 'SuisseInti-Book';
+    font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
     line-height: 32px;
     color: #616161;
     margin: 40px 0 0 0;
+
+    @media screen and (max-width: 600px) {
+        font-size: 20px;
+        line-height: 30px;
+    }
 `;
 
 export const ImageIntroWrapper = styled.div`
-
+    display: flex;
+    justify-content: flex-end;
 `;
 
 export const ImageProjectIntro = styled.img`
-
+    max-width: 520px;
 `;
 
 export const ProjectsLinkWrapper = styled.div`

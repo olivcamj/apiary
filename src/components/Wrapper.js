@@ -9,11 +9,12 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   ${({ dark }) =>
     dark &&
     css`
-      background-color: #000;
+      background-color: #1A1B22;
       color: #fff;
   `}
   ${({ neutral }) =>
@@ -23,11 +24,11 @@ export const Wrapper = styled.section`
       color: #000;
   `}
 
-  @media (min-width: 321px) and (max-width: 1024px) {
+  @media (min-width: 601px) and (max-width: 1024px) {
     padding: 100px 40px;
   }
 
-  @media (max-width: 320px) {
+  @media screen and (max-width: 600px) {
     padding: 60px 16px;
   }
 `;
