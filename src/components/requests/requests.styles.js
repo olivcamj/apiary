@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { GlobalCard } from '../global-components/global-card/globalCard';
 
 export const Container = styled.div`
-    background: #fff;    
-    max-width: 1440px;
-    padding: 100px 0 150px 0;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0;
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -18,26 +18,33 @@ export const Container = styled.div`
 
 
 export const RequestsTitle = styled.h2`
-    font-family: 'SuisseInti-Book';
+    font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
     line-height: 56px;
-    /* identical to box height */
     color: #000000;
     margin: 0 auto;
-    overflow: hidden;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+
+    @media screen and (max-width: 600px) {
+        font-size: 34px;
+        line-height: 40px;
+    }
 
     @media screen and (max-width: 400px) {
         width: 288px; 
         font-size: 32px;
         line-height: 37px;
     }
+
 `;
 
 export const RequestsIntro = styled.p`
-    width: 751px;
-    font-family: 'SuisseInti-Book';
+    max-width: 751px;
+    font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -46,6 +53,11 @@ export const RequestsIntro = styled.p`
     color: #616161;
     text-align: center;
     margin: 40px auto 70px auto;
+
+    @media screen and (max-width: 600px) {
+        font-size: 20px;
+        line-height: 30px;
+    }
 
     @media screen and (max-width: 400px) {
         width: 288px; 
@@ -58,6 +70,11 @@ export const RequestsIntro = styled.p`
 export const CardWrapper = styled.div`
     overflow: visible;
     display: flex;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
     justify-content: center;
     align-content: center;
 
@@ -69,7 +86,7 @@ export const CardWrapper = styled.div`
 export const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"})`
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    width: 400px;
+    max-width: 400px;
     height: 400px;
     background: transparent;
 

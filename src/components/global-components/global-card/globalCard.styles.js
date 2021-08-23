@@ -289,9 +289,9 @@ export const HeaderStudentWrapper = styled.div`
 
 export const StudentsPicsWrapper = styled.div`
     height: 60px;
-    width: 150px;
+    width: 180px;
     position: relative;
-    overflow: visible;       
+    margin-right: 20px;
 
     @media screen and (max-width: 400px) {
         margin-bottom: 16px;
@@ -304,17 +304,19 @@ export const StudentsPics = styled.img`
     height: 60px;
     width: 60px;
     position: relative;
+    
     &:nth-child(1) {
+        transform: translateX(0);
         z-index: 200;
     }
     &:nth-child(2) {
         transform: translateX(-20px);
         z-index: 1;
-    }
+    } 
     &:nth-child(3) {
         position: absolute;
         transform: translateX(-40px)
-    }
+    } 
 
     @media screen and (max-width: 400px) {
         height: 30px;

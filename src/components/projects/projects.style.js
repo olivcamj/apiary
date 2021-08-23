@@ -3,9 +3,9 @@ import { GlobalCard } from '../global-components/global-card/globalCard';
 import { GlobalButton } from '../global-components/global-components';
 
 export const Container = styled.div`
-    background-color: #E5E5E5;
-    padding: 100px 0 150px 0;
-    max-width: 1440px;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +30,7 @@ export const ProjectsIntroWrapper = styled.div`
 `;
 
 export const TextWrapper = styled.div`
-    width: 620px;
+    max-width: 620px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,17 +48,18 @@ export const TextWrapper = styled.div`
 `;
 
 export const ProjectIntroTitle = styled.h2`
-    font-family: 'SuisseInti-Book';
+    width: 100%;    
+    font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
     line-height: 56px;
     color: #000000;
     margin: 0;
-    overflow: hidden;
 
-    @media screen and (max-width: 1024px) {
-        
+    @media screen and (max-width: 600px) {
+        font-size: 34px;
+        line-height: 40px;
     }
 
     @media screen and (max-width: 400px) {
@@ -66,11 +67,10 @@ export const ProjectIntroTitle = styled.h2`
         font-size: 32px;
         line-height: 37px;
     }
-
 `;
 
 export const ProjectIntroText = styled.p`
-    font-family: 'SuisseInti-Book';
+    font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -78,7 +78,7 @@ export const ProjectIntroText = styled.p`
     color: #616161;
     margin: 40px 0 0 0;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 600px) {
         font-size: 20px;
         line-height: 30px;
     }
@@ -95,6 +95,9 @@ export const ImageIntroWrapper = styled.div`
 `;
 
 export const ImageProjectIntro = styled.img`
+max-width: 520px;
+    display: flex;
+    justify-content: flex-end;
     @media screen and (max-width: 1280px) {
         width: 452px;
         height: 452px;
@@ -104,9 +107,12 @@ export const ImageProjectIntro = styled.img`
         width: 320px;
         height: 320px;
     }
+    
 `;
 
+
 export const ProjectsLinkWrapper = styled.div`
+    width: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -122,6 +128,7 @@ export const ProjectsLinkWrapper = styled.div`
 `;
 
 export const ProjectButton = styled(GlobalButton)`
+    align-self: center;
     width: 400px;
     &:nth-child(2) {
         margin: 0 40px;
@@ -253,6 +260,7 @@ export const ClientCard = styled(GlobalCard).attrs({ className: "clientCard" })`
         font-size: 32px;
         line-height: 37px;
         height: 383px;
+        margin: 0 auto;
     }
 
     
@@ -277,7 +285,7 @@ export const StudentsCard = styled(GlobalCard).attrs({ className: "studentsCard"
         height: 383px;
         font-size: 32px;
         line-height: 37px;
-        
+        margin: 0 auto;
     }
 `;
 

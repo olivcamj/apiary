@@ -3,9 +3,9 @@ import { GlobalCard } from '../global-components/global-card/globalCard';
 import { GlobalButton } from '../global-components/global-components';
 
 export const Container = styled.div`
-    background: #E5E5E5;    
-    max-width: 1440px;
-    padding: 100px 0 100px 0;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0;
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@ export const Container = styled.div`
 
 export const BubbleTitle = styled.h2`
     margin: 0 auto 80px auto;
-    font-family: 'SuisseInti-Book';
+    font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 48px;
@@ -35,18 +35,26 @@ export const BubbleTitle = styled.h2`
         margin: 0 auto 40px auto;
     }
 
+    @media screen and (max-width: 600px) {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
     @media screen and (max-width: 560px) {
         width: 288px;
         font-size: 32px;
         line-height: 37px;
         margin: 0 auto 32px auto;
+        text-align: center;
+        width: 100%;
     }
+    
 `;
 
 export const ChatWrapper = styled.div`
     max-width: 100%;
     margin: 0;
-    padding: 0 80px;
+    padding: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -63,12 +71,11 @@ export const ChatWrapper = styled.div`
 export const LeftTextWrapper = styled.div`
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
     overflow: visible;
     align-self: flex-start;
     margin-bottom: 40px;
-
 `;
 
 export const IconWrapper = styled.div`
@@ -78,8 +85,8 @@ export const IconWrapper = styled.div`
     align-content: center;
     position: relative;
     overflow: visible;
-    
-    @media screen and (max-width: 720px) {
+
+    @media screen and (max-width: 700px) {
         display: none;
     }
 `;
@@ -106,16 +113,20 @@ export const OrangeCard = styled(GlobalCard).attrs({className: 'OrangeCard'})`
         
     }
 
+    @media screen and (max-width: 700px) {
+        margin-left: 0;
+    }
 `;  
 
 export const RightTextWrapper = styled.div`
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-content: center;
     overflow: visible;
     align-self: flex-end;
     margin-bottom: 40px;
+    width: auto;
 `;
 
 export const WhiteCard = styled(GlobalCard).attrs({className: 'WhiteCard'})`
