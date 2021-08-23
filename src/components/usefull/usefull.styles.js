@@ -65,7 +65,7 @@ export const CardWrapper = styled.div.attrs({className: "cards"})`
 export const UsefullCard = styled(GlobalCard).attrs({className: "usefullCard"})`
     border: none;
     border-radius: 0;
-    width: 400px;
+    max-width: 400px;
     height: 100%;
     background: transparent;
 
