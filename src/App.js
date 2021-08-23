@@ -1,4 +1,5 @@
 import './App.css';
+import Navbar from './components/Navbar';
 import Header from './components/Header';
 
 import Usefull from '../src/components/usefull/usefull';
@@ -9,6 +10,7 @@ import Projects from '../src/components/projects/projects';
 function App() {
   return (
     <div className="app">
+      <Navbar />
       <Header />
       <Usefull></Usefull>
       <Requests></Requests>
