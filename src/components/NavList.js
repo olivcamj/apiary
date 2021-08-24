@@ -41,6 +41,10 @@ const ListItem = styled.li`
     margin-right: 0;
   }
 
+  .link-to {
+    text-decoration: none;
+  }
+  
   @media (max-width: 325px) {
     max-width: 288px;
     height: 39px;
