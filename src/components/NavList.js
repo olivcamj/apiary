@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { Link } from 'react-router-dom';
+import { Link as LinkTo } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 const List = styled.ul`
@@ -60,16 +61,36 @@ const ListItem = styled.li`
 const NavList = ({ location }) => {
   return location.pathname === "/" ? (
     <List>
-      <ListItem>We can help!</ListItem>
-      <ListItem>About</ListItem>
-      <ListItem>How to Start</ListItem>
-      <ListItem>Projects</ListItem>
-      <ListItem>Contacts</ListItem>
+      <ListItem>
+        <Link to="requests" smooth={true}>
+          We can help!
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link to="about" smooth={true}>
+          About
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link to="start" smooth={true}>
+          How to Start
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link to="projects" smooth={true}>
+          Projects
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link to="contacts" smooth={true}>
+          Contacts
+        </Link>
+      </ListItem>
     </List>
   ) : (
     <List>
       <ListItem>
-        <Link to="/">Back to homepage</Link>
+        <LinkTo to="/" className="link-to">Back to homepage</LinkTo>
       </ListItem>
       <ListItem>Students' projects</ListItem>
     </List>

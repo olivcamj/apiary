@@ -7,7 +7,7 @@ import image3 from '../../images/pr-boost.png';
 const Usefull = () => {
 
     return (
-        <Container>
+        <Container name="useful">
 
             <UsefullTitle>Why is it useful for your company?</UsefullTitle>
             <UsefullIntro>By handing over assignments to students for work, you free experienced employees from routine tasks, as well as increase brand awareness.</UsefullIntro>

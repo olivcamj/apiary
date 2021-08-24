@@ -33,7 +33,7 @@ const Bubble = () => {
     ]
 
     return (
-        <Container>
+        <Container name="about">
             <BubbleTitle>What is Practicum by Yandex?</BubbleTitle>
             <ChatWrapper>
                 {conversation.map((element, i) => {
