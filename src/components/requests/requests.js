@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, CardWrapper, RequestsCard, RequestsTitle, RequestsIntro } from './requests.styles';
 import { Wrapper } from '../Wrapper';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Wrapper } from '../Wrapper';
 import { Container, BubbleTitle, ChatWrapper, LeftTextWrapper, IconWrapper, IconImage, OrangeCard, RightTextWrapper, WhiteCard, DelegateTaskButtonWrapper, DelegateButton } from './bubble.styles';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, CardWrapper, UsefullCard, UsefullTitle, UsefullIntro } from './usefull.styles';
 import { Wrapper } from '../Wrapper';
 

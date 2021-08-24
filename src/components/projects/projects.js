@@ -97,42 +97,6 @@ const Projects = () => {
 
                 }
 
-                {/* {isLoaded
-                    ?
-                    <>
-                        <ProjectCardWrapper>
-                            <ProjectCard
-                                projectTitle={projectContent[0].fields.title}
-                                projectIntro={projectContent[0].fields.intro}
-                                projectDate={projectContent[0].fields.createdin}
-                            // href={}
-                            >
-                                <CoverCard
-                                    coverPic={projectContent[0].fields.coverImg.fields.file.url}
-                                ></CoverCard>
-                            </ProjectCard>
-
-                            <BottomCards>
-                                <ClientCard
-                                    clientName={projectContent[0].fields.clientName}
-                                    clientPic={projectContent[0].fields.clientPic.fields.file.url}
-                                    clientPos={projectContent[0].fields.clientPos}
-                                    clientRev={projectContent[0].fields.clientReview}
-                                ></ClientCard>
-                                <StudentsCard
-                                    studentsTeam={'Students Team'}
-                                    studentName1={projectContent[0].fields.studentName4}
-                                    studentsReview={projectContent[0].fields.studentText}
-                                    studentPic={projectContent[0].fields.student1.fields.file.url}
-                                ></StudentsCard>
-                            </BottomCards>
-                        </ProjectCardWrapper>
-                    </>
-
-                    :
-                    <BounceLoader color={'#000'} loading={true} size={60} />
-                } */}
-
                 <ProjectsBottomLinksWrapper>
                     <ProjectButtonBottom marginb href={"/"} target={"_blank"}>More projects...</ProjectButtonBottom>
                     <ProjectButtonBottom marginb orange href={"/"} target={"_blank"}>Delegate a task</ProjectButtonBottom>

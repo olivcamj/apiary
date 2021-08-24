@@ -10,6 +10,10 @@ export const Container = styled.div`
     justify-content: center;
     align-content: center;
     box-sizing: border-box;
+
+    @media screen and (max-width: 400px) {
+        
+    }
 `;
 
 
@@ -20,6 +24,7 @@ export const RequestsTitle = styled.h2`
     font-size: 48px;
     line-height: 56px;
     color: #000000;
+    margin: 0 auto;
     text-align: center;
     margin: 0;
     width: 100%;
@@ -28,6 +33,13 @@ export const RequestsTitle = styled.h2`
         font-size: 34px;
         line-height: 40px;
     }
+
+    @media screen and (max-width: 400px) {
+        width: 288px; 
+        font-size: 32px;
+        line-height: 37px;
+    }
+
 `;
 
 export const RequestsIntro = styled.p`
@@ -46,9 +58,18 @@ export const RequestsIntro = styled.p`
         font-size: 20px;
         line-height: 30px;
     }
+
+    @media screen and (max-width: 400px) {
+        width: 288px; 
+        font-size: 20px;
+        line-height: 30px;
+        margin: 32px auto 32px auto;
+    }
 `;
 
 export const CardWrapper = styled.div`
+    overflow: visible;
+    display: flex;
     width: 100%;
     height: 100%;
     display: inline-flex;
@@ -56,6 +77,10 @@ export const CardWrapper = styled.div`
     row-gap: 40px;
     justify-content: center;
     align-content: center;
+
+    @media screen and (max-width: 400px) {
+        flex-direction: column;
+    }
 `;
 
 export const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"})`
@@ -68,6 +93,20 @@ export const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"}
     &:nth-child(2) {
         margin-left: 40px;
         margin-right: 40px;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        &:nth-child(2) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        }
+
+        
     }
     
 `;
