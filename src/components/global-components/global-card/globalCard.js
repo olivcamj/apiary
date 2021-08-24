@@ -1,4 +1,4 @@
-import { Card, ProjectCover, ProjectWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, ReviewLink, UsefullWrapper, ImageWrapper, UsefullImage, UsefullTitle, UsefullText, RequestsImageWrapper, RequestsWrapper, RequestsImage, RequestsHash, RequestsTitle, ChatText} from './globalCard.styles';
+import { Card, ProjectCover, ProjectWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, ReviewLink, UsefullWrapper, ImageWrapper, UsefullImage, UsefullTitle, UsefullText, RequestsImageWrapper, RequestsWrapper, RequestsImage, RequestsHash, RequestsTitle, ChatText, HeaderStudentWrapper } from './globalCard.styles';
 
 
 export const GlobalCard = ({
@@ -53,12 +53,13 @@ export const GlobalCard = ({
                         </ClientInfoWrapper>
                     </HeaderWrapper>
                     <ClientRev>{clientRev}</ClientRev>
+                    <ReviewLink href={reviewLink}>Read full review</ReviewLink>
                 </ClientWrapper>
             }
 
             {studentsTeam &&
                 <StudentsWrapper>
-                    <HeaderWrapper>
+                    <HeaderStudentWrapper>
                         <StudentsPicsWrapper>
                             <StudentsPics src={studentPic} />
                             <StudentsPics src={studentPic} />
@@ -68,9 +69,8 @@ export const GlobalCard = ({
                             <StudentsTitle>{studentsTeam}</StudentsTitle>
                             <StudentsNames>{studentName1},{''} {studentName1}, {''}{studentName1}</StudentsNames>
                         </StudentsInfoWrapper>
-                    </HeaderWrapper>
+                    </HeaderStudentWrapper>
                     <StudentsRev>{studentsReview}</StudentsRev>
-                    <ReviewLink href={reviewLink}>Read full review</ReviewLink>
                 </StudentsWrapper>
             }
 

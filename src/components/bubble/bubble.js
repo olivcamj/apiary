@@ -1,4 +1,4 @@
-import React from 'react';
+import { Wrapper } from '../Wrapper';
 import { Container, BubbleTitle, ChatWrapper, LeftTextWrapper, IconWrapper, IconImage, OrangeCard, RightTextWrapper, WhiteCard, DelegateTaskButtonWrapper, DelegateButton } from './bubble.styles';
 
 import chatIcon from '../../images/ChatIcon.png';
@@ -33,33 +33,35 @@ const Bubble = () => {
     ]
 
     return (
-        <Container name="about">
-            <BubbleTitle>What is Practicum by Yandex?</BubbleTitle>
-            <ChatWrapper>
-                {conversation.map((element, i) => {
-                    return (
-                        element.chatLeft ?
-                            <LeftTextWrapper key={i}>
-                                <IconWrapper>
-                                    <IconImage src={chatIcon} />
-                                </IconWrapper>
-                                <OrangeCard chatText={conversation[i].chatText}></OrangeCard>
-                            </LeftTextWrapper>
-                            :
-                            <RightTextWrapper key={i}>
-                                <WhiteCard chatText={conversation[i].chatText}></WhiteCard>
-                            </RightTextWrapper>
-                            
-                    )
-                })}
-                
-            </ChatWrapper>
+        <Wrapper neutral>
+            <Container name="about">
+                <BubbleTitle>What is Practicum by Yandex?</BubbleTitle>
+                <ChatWrapper>
+                    {conversation.map((element, i) => {
+                        return (
+                            element.chatLeft ?
+                                <LeftTextWrapper key={i}>
+                                    <IconWrapper>
+                                        <IconImage src={chatIcon} />
+                                    </IconWrapper>
+                                    <OrangeCard chatText={conversation[i].chatText}></OrangeCard>
+                                </LeftTextWrapper>
+                                :
+                                <RightTextWrapper key={i}>
+                                    <WhiteCard chatText={conversation[i].chatText}></WhiteCard>
+                                </RightTextWrapper>
+                                
+                        )
+                    })}
+                    
+                </ChatWrapper>
 
-            <DelegateTaskButtonWrapper>
-                <DelegateButton orange>Delegate a task</DelegateButton>
-            </DelegateTaskButtonWrapper>
+                <DelegateTaskButtonWrapper>
+                    <DelegateButton orange>Delegate a task</DelegateButton>
+                </DelegateTaskButtonWrapper>
 
-        </Container >
+            </Container >
+        </Wrapper>
     )
 }
 
