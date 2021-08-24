@@ -32,6 +32,7 @@ export const UsefullTitle = styled.h2`
     @media screen and (max-width: 600px) {
         font-size: 34px;
         line-height: 40px;
+        text-align: left;
     }
 
     @media screen and (max-width: 400px) {
@@ -57,6 +58,7 @@ export const UsefullIntro = styled.p`
     @media screen and (max-width: 600px) {
         font-size: 20px;
         line-height: 30px;
+        text-align: left;
     }
 `;
 
