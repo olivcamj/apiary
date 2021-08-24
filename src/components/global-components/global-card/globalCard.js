@@ -1,4 +1,4 @@
-import { Card, ProjectCover, ProjectWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, ReviewLink, UsefullWrapper, ImageWrapper, UsefullImage, UsefullTitle, UsefullText, RequestsImageWrapper, RequestsWrapper, RequestsImage, RequestsHash, RequestsTitle, ChatText, HeaderStudentWrapper } from './globalCard.styles';
+import { Card, ProjectCover, ProjectWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, ReviewLink, IconBoxWrapper, ImageWrapper, IconBoxImage, IconBoxTitle, IconBoxText, RequestsImageWrapper, RequestsWrapper, RequestsImage, RequestsHash, RequestsTitle, ChatText, HeaderStudentWrapper } from './globalCard.styles';
 
 
 export const GlobalCard = ({
@@ -18,9 +18,9 @@ export const GlobalCard = ({
     studentsReview,
     studentPic,
     reviewLink,
-    usefullImage,
-    usefullTitle,
-    usefullText,
+    iconBoxImage,
+    iconBoxTitle,
+    iconBoxText,
     requestsImage,
     requestsHash,
     requestsTitle,
@@ -74,16 +74,16 @@ export const GlobalCard = ({
                 </StudentsWrapper>
             }
 
-            {usefullImage &&
-                <UsefullWrapper>
+            {iconBoxImage &&
+                <IconBoxWrapper>
                     <ImageWrapper>
-                        <UsefullImage
-                            src={usefullImage}
+                        <IconBoxImage
+                            src={iconBoxImage}
                         />
                     </ImageWrapper>
-                    <UsefullTitle>{usefullTitle}</UsefullTitle>
-                    <UsefullText>{usefullText}</UsefullText>
-                </UsefullWrapper>
+                    <IconBoxTitle>{iconBoxTitle}</IconBoxTitle>
+                    <IconBoxText>{iconBoxText}</IconBoxText>
+                </IconBoxWrapper>
             }
 
             {requestsImage &&
