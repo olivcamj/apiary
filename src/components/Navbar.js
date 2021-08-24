@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../images/practicum-logo.svg";
 import mobileMenu from '../images/ChatIcon.png';
@@ -19,7 +19,7 @@ const Container = styled.nav`
 
   @media (max-width: 1024px) {
     padding-top: 42px;
-    max-width: 944px /*671px*/;
+    max-width: 944px;
     min-height: 25px;
     height:100%;
   }
@@ -51,13 +51,13 @@ const Logo = styled.div`
 
 const MobileNav = styled.button`
   position: absolute;
-  top: 38px;
+  top: 30px;
   right: 0;
   margin-top: 0;
   border: none;
   padding: 0;
   width: 32px;
-  height: 25px;
+  min-height: 25px;
   background: transparent;
 `;
 
@@ -65,7 +65,7 @@ const MobileMenu = styled.div`
   display: flex;
   outline: none;
   width: 32px;
-  height: 20px;
+  height: 100%;
   border: 0px;
   padding: 0px;
   background: transparent;
@@ -93,11 +93,11 @@ const MobileMenu = styled.div`
   }
 
   // line transition
-  &:active :before {
+  &.is-active:before {
     transform: translateY(0) rotate(45deg);
   }
 
-  &:active :after {
+  &.is-active:after {
     transform: translateY(0) rotate(-45deg);
   }
 
@@ -155,7 +155,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   let location = useLocation();
   
-  async function handleWindowResize() {
+  function handleWindowResize() {
     useEffect(() => {
       function handleWindowSizeChange() {
         setWindowSize({ width: window.innerWidth });
@@ -169,14 +169,12 @@ const Navbar = () => {
       // Remove event listener on cleanup
       return () => window.removeEventListener("resize", handleWindowSizeChange);
     }, []);
-    console.log(windowSize);
-    return await windowSize;
+
+    return windowSize;
   }
 
   let size = handleWindowResize();
-  let isMobile = size.width <= 500;
-  
-  console.log(isMobile); /****** REMOVE ME *************************************************/
+  let isMobile = size.width <= 700;
  
   function openMenu() {
     setIsOpen(!isOpen);
@@ -184,22 +182,26 @@ const Navbar = () => {
 
   return (
     <Container role="navigation" aria-label="main navigation">
-      <Logo />
-      {size ? (
+      <Link to="/">
+        <Logo role="button" aria-label="home" />
+      </Link>
+      {isMobile && (
         <MobileNav>
           <MobileMenu
             onClick={openMenu}
-            className={`${isOpen && "is-active"}`}
+            className={`${isOpen ? "is-active" : null }`}
             aria-expanded="false"
             role="button"
             aria-label="menu"
           />
         </MobileNav>
-      ) : (
+      )}
+      {(!isMobile || isOpen) &&
         <>
           <NavList location={location} />
           <Button>Delegate a task</Button>
         </>
+      } 
       )}
     </Container>
   );
