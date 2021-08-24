@@ -35,7 +35,7 @@ const Projects = () => {
     }, 2000);
 
     return (
-        <Container>
+        <Container name="projects">
             <ProjectsIntroWrapper>
                 <TextWrapper>
                     <ProjectIntroTitle>Delegate tasks to those <br /> who enjoy them</ProjectIntroTitle>
