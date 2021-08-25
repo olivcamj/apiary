@@ -93,12 +93,6 @@ export const ImageIntroWrapper = styled.div`
 	display: flex;
 	justify-content: flex-end;
 
-<<<<<<< HEAD
-    @media screen and (max-width: 320px) {
-        width: 320px;
-        
-    }
-=======
 	@media screen and (max-width: 960px) {
 		justify-content: center;
 	}
@@ -106,7 +100,6 @@ export const ImageIntroWrapper = styled.div`
 	@media screen and (max-width: 320px) {
 			width: 320px;
 	}
->>>>>>> 5269d18cbf630052d0a12df116a1f60895197182
 `;
 
 export const ImageProjectIntro = styled.img`
