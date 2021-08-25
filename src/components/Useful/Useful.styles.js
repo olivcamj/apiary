@@ -96,9 +96,7 @@ export const IconBoxCard = styled(GlobalCard).attrs({ className: "iconBoxCard" }
         margin-right: auto;
         margin-top: 32px;
         margin-bottom: 32px;
-        }
-
-        
+        } 
     }
 `;
 
