@@ -100,20 +100,6 @@ const MobileMenu = styled.div`
   &.is-active:after {
     transform: translateY(0) rotate(-45deg);
   }
-
-  // border: none;
-  // padding: 8px;
-  // width: 40px;
-  // height: 40px;
-  // box-sizing: border-box;
-  // position: absolute;
-  // top: 25px;
-  // right: 0;
-
-  // .hamburger-icon {
-  //   width: 100%;
-  //   height: 100%;
-  // }
 `;
 
 const Button = styled.button`
@@ -202,7 +188,6 @@ const Navbar = () => {
           <Button>Delegate a task</Button>
         </>
       } 
-      )}
     </Container>
   );
 };
