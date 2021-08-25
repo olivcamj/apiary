@@ -31,4 +31,7 @@ export const Wrapper = styled.section`
   @media screen and (max-width: 600px) {
     padding: 60px 16px;
   }
+
+
+
 `;

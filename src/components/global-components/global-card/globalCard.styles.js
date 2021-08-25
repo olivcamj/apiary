@@ -43,13 +43,13 @@ export const ProjectWrapper = styled.div`
     }
 
     @media screen and (max-width: 960px) {
+        padding-left: 0;
         margin: 20px;
         align-self: center;
         width: 100%;
     }
 
     @media screen and (max-width: 400px) {
-        padding-left: 0;
         width: 276px;
         height: 237px;
         margin: 20px 12px;
@@ -145,16 +145,22 @@ export const ProjectLink = styled.a`
 
 // PROJECT CLIENT REVIEW
 export const ClientWrapper = styled.div`
-    width: 565px;
-    margin: 32px;
-    position: relative;
+        width: 565px;
+        margin: 32px 33px 32px auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
 
     @media screen and (max-width: 1280px) {
-        margin: 20px;
+        margin: 20px 20px 20px auto;
+        padding-left: 20px;
         width: 442px;
     }
     @media screen and (max-width: 960px) {
-        margin: 20px;
+        padding-left: 0;
+        margin: 20px auto;
+        align-self: center;
         width: 100%;
     }
 
@@ -162,6 +168,9 @@ export const ClientWrapper = styled.div`
         margin: 12px;
         font-size: 24px;
         line-height: 28px;
+        width: 276px;
+        margin: 20px 12px;
+        height: 343px;
         
     }
 `;
@@ -240,6 +249,10 @@ export const ClientRev = styled.p`
     overflow: hidden;
     margin: 0;
 
+    @media screen and (max-width: 1280px) {
+        
+    }
+
     @media screen and (max-width: 400px) {
         font-size: 16px;
         line-height: 20px;
@@ -247,6 +260,24 @@ export const ClientRev = styled.p`
     }
 
 
+`;
+
+export const ReviewLink = styled.a`
+    width: auto;
+    font-family: 'SuisseInti-Book';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    color: #FF9900;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @media screen and (max-width: 1280px) {
+        left: 20px;
+    }
 `;
 
 // STUDENTS SECTION
@@ -395,18 +426,7 @@ export const StudentsRev = styled.p`
     } 
 `;
 
-export const ReviewLink = styled.a`
-    font-family: 'SuisseInti-Book';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: right;
-    color: #FF9900;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-`;
+
 
 
 // USEFULL SECTION

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectsLinkWrapper, ProjectCardWrapper, ProjectsBottomLinksWrapper, ProjectButton, ProjectsIntroWrapper, TextWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro, ProjectButtonBottom  } from './projects.style';
-import { Wrapper } from '../Wrapper';
+import { WrapperDiv, Container, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectsLinkWrapper, ProjectCardWrapper, ProjectsBottomLinksWrapper, ProjectButton, ProjectsIntroWrapper, TextWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro, ProjectButtonBottom  } from './projects.style';
 
 import BounceLoader from "react-spinners/ClipLoader";
 import { client } from '../../helper/client';
@@ -36,7 +35,7 @@ const Projects = () => {
     }, 2000);
 
     return (
-        <Wrapper neutral>
+        <WrapperDiv neutral>
             <Container>
                 <ProjectsIntroWrapper>
                     <TextWrapper>
@@ -103,7 +102,7 @@ const Projects = () => {
                 </ProjectsBottomLinksWrapper>
 
             </Container>
-        </Wrapper>
+        </WrapperDiv>
     )
 }
 

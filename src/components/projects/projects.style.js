@@ -1,7 +1,13 @@
 import styled from "styled-components";
 import { GlobalCard } from '../global-components/global-card/globalCard';
 import { GlobalButton } from '../global-components/global-components';
+import { Wrapper } from '../Wrapper';
 
+export const WrapperDiv = styled(Wrapper)`
+    @media screen and (max-width: 1024px) {
+        padding-bottom: 40px;
+}
+`;
 export const Container = styled.div`
     width: 100%;
     max-width: 1280px;
@@ -26,6 +32,7 @@ export const ProjectsIntroWrapper = styled.div`
     @media screen and (max-width: 400px) {
         width: 320px;
         margin: 0 auto 40px auto; 
+        
     }
 `;
 
@@ -91,6 +98,7 @@ export const ImageIntroWrapper = styled.div`
 
     @media screen and (max-width: 320px) {
         width: 320px;
+        
     }
 `;
 
@@ -293,7 +301,7 @@ export const ProjectsBottomLinksWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-content: center;
-    margin: 0 auto 80px auto;
+    margin: 0 auto;
     position: relative;
     width: 100%;
     

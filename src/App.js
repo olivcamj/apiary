@@ -5,6 +5,7 @@ import Usefull from '../src/components/usefull/usefull';
 import Bubble from '../src/components/bubble/bubble';
 import Requests from '../src/components/requests/requests';
 import Projects from '../src/components/projects/projects';
+import Footer from '../src/components/footer/footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Requests></Requests>
       <Bubble></Bubble>
       <Projects></Projects>
+      <Footer></Footer>
     </div>
   );
 }
