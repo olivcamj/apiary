@@ -17,7 +17,7 @@ export const Container = styled.div`
 `;
 
 
-export const UsefullTitle = styled.h2`
+export const IconBoxTitle = styled.h2`
     font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -32,6 +32,7 @@ export const UsefullTitle = styled.h2`
     @media screen and (max-width: 600px) {
         font-size: 34px;
         line-height: 40px;
+        text-align: left;
     }
 
     @media screen and (max-width: 400px) {
@@ -43,7 +44,7 @@ export const UsefullTitle = styled.h2`
     
 `;
 
-export const UsefullIntro = styled.p`
+export const IconBoxIntro = styled.p`
     max-width: 840px;
     font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
     font-style: normal;
@@ -57,6 +58,7 @@ export const UsefullIntro = styled.p`
     @media screen and (max-width: 600px) {
         font-size: 20px;
         line-height: 30px;
+        text-align: left;
     }
 `;
 
@@ -75,7 +77,7 @@ export const CardWrapper = styled.div.attrs({ className: "cards" })`
     }
 `;
 
-export const UsefullCard = styled(GlobalCard).attrs({ className: "usefullCard" })`
+export const IconBoxCard = styled(GlobalCard).attrs({ className: "iconBoxCard" })`
     border: none;
     border-radius: 0;
     max-width: 400px;
@@ -94,9 +96,7 @@ export const UsefullCard = styled(GlobalCard).attrs({ className: "usefullCard" }
         margin-right: auto;
         margin-top: 32px;
         margin-bottom: 32px;
-        }
-
-        
+        } 
     }
 `;
 
