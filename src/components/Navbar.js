@@ -35,6 +35,15 @@ const Container = styled.nav`
   }
 `;
 
+const StyledLink = styled(Link)`
+  width: 180px;
+
+  @media (max-width: 1024px) {
+    width: 137px;
+  }
+`;
+
+
 const Logo = styled.div`
   margin-top: 5px;
   width: 180px;
@@ -46,6 +55,10 @@ const Logo = styled.div`
   @media (max-width: 1024px) {
     width: 137px;
     height: 25px;
+  }
+
+  .logo-link {
+    width: 180px
   }
 `;
 
@@ -168,9 +181,9 @@ const Navbar = () => {
 
   return (
     <Container role="navigation" aria-label="main navigation">
-      <Link to="/">
-        <Logo role="button" aria-label="home" />
-      </Link>
+      <StyledLink to="/">
+        <Logo role="button" aria-label="home" /> 
+      </StyledLink>
       {isMobile && (
         <MobileNav>
           <MobileMenu

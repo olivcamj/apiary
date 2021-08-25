@@ -4,11 +4,12 @@ import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 const List = styled.ul`
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  max-width: 488px;
   list-style: none;
 
   @media (max-width: 325px) {
@@ -94,9 +95,11 @@ const NavList = ({ location }) => {
   ) : (
     <List>
       <ListItem>
-        <LinkTo to="/" className="link-to">Back to homepage</LinkTo>
+        <LinkTo to="/" className="link-to">
+          Back to homepage
+        </LinkTo>
       </ListItem>
-      <ListItem>Students' projects</ListItem>
+      <ListItem>Students&apos; projects</ListItem>
     </List>
   );
 };
