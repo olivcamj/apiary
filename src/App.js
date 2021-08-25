@@ -6,6 +6,7 @@ import Bubble from './components/bubble/bubble';
 import Requests from './components/requests/requests';
 import Projects from './components/projects/projects';
 import About from './components/About';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Bubble />
       <About />
       <Projects />
+      <Footer />
     </div>
   );
 }
