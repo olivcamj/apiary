@@ -40,8 +40,8 @@ const Projects = () => {
             <Container name="projects">
                 <ProjectsIntroWrapper>
                     <TextWrapper>
-                        <ProjectIntroTitle>Delegate tasks to those <br /> who enjoy them</ProjectIntroTitle>
-                        <ProjectIntroText>Check out the projects our students have done for <br /> companies in the USA and beyond</ProjectIntroText>
+                        <ProjectIntroTitle>Delegate tasks to those who enjoy them</ProjectIntroTitle>
+                        <ProjectIntroText>Check out the projects our students have done for companies in the USA and beyond</ProjectIntroText>
                     </TextWrapper>
                     <ImageIntroWrapper>
                         <ImageProjectIntro src={imageIntro} />

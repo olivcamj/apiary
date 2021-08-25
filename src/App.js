@@ -2,20 +2,22 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 
-import Usefull from '../src/components/usefull/usefull';
+import Useful from './components/Useful/Useful';
 import Bubble from '../src/components/bubble/bubble';
 import Requests from '../src/components/requests/requests';
 import Projects from '../src/components/projects/projects';
+import About from './components/About';
 
 function App() {
   return (
     <div className="app">
       <Navbar />
       <Header />
-      <Usefull></Usefull>
-      <Requests></Requests>
-      <Bubble></Bubble>
-      <Projects></Projects>
+      <Useful />
+      <Requests />
+      <Bubble />
+      <About />
+      <Projects />
     </div>
   );
 }

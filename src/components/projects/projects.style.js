@@ -35,9 +35,7 @@ export const TextWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    @media screen and (max-width: 1280px) {
-        width: 453px;
-    }
+
     @media screen and (max-width: 960px) {
         margin: 0 auto;
     }
@@ -85,27 +83,29 @@ export const ProjectIntroText = styled.p`
 `;
 
 export const ImageIntroWrapper = styled.div`
-    @media screen and (max-width: 960px) {
-        margin: 0 auto;
-    }
+	display: flex;
+	justify-content: flex-end;
 
-    @media screen and (max-width: 320px) {
-        width: 320px;
-    }
+	@media screen and (max-width: 960px) {
+		justify-content: center;
+	}
+
+	@media screen and (max-width: 320px) {
+			width: 320px;
+	}
 `;
 
 export const ImageProjectIntro = styled.img`
-max-width: 520px;
+	max-width: 520px;
     display: flex;
     justify-content: flex-end;
+
     @media screen and (max-width: 1280px) {
-        width: 452px;
-        height: 452px;
+        max-width: 452px;
     }
 
     @media screen and (max-width: 400px) {
-        width: 320px;
-        height: 320px;
+        max-width: 320px;
     }
     
 `;
