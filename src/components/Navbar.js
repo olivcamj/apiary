@@ -21,17 +21,18 @@ const Container = styled.nav`
     padding-top: 42px;
     max-width: 944px;
     min-height: 25px;
-    height:100%;
+    height: 100%;
   }
 
   @media (max-width: 768px) {
     padding-top: 25px;
+    max-width: calc(100% - 40px);
+    flex-direction: column;
   }
 
   @media (max-width: 325px) {
-    width: 288px;
+    max-width: 288px;
     min-height: 39px;
-    flex-direction: column;
   }
 `;
 
@@ -119,7 +120,7 @@ const Button = styled.button`
   border: 2px solid #f90;
   border-radius: 30px;
   padding: 20px 32px;
-  width: 180px;
+  width: 184px;
   height: 60px;
   box-sizing: border-box;
   background: #fff;
@@ -127,7 +128,6 @@ const Button = styled.button`
   line-height: 20px;
   text-align: center;
   color: #f90;
-  overflow: initial;
 
   :hover {
     background-color: #f90;
@@ -135,17 +135,21 @@ const Button = styled.button`
     cursor: pointer;
   }
 
-  @media (max-width: 325px) {
-    margin-top: 70px;
+  @media (max-width: 768px) {
     border-radius: 40px;
-    padding: 19px 57px 19px 58px;
+    padding: 19px 58px;
     width: 288px;
     height: 70px;
     background-color: #f90;
     font-size: 24px;
     line-height: 32px;
     color: #fff;
+    align-self: center;
   }
+
+   @media (max-width: 325px) {
+    margin-top: 70px;
+   }
 `;
 
 const Navbar = () => {
@@ -173,7 +177,7 @@ const Navbar = () => {
   }
 
   let size = handleWindowResize();
-  let isMobile = size.width <= 700;
+  let isMobile = size.width <= 768;
  
   function openMenu() {
     setIsOpen(!isOpen);

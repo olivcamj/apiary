@@ -12,18 +12,24 @@ const List = styled.ul`
   max-width: 488px;
   list-style: none;
 
+  @media (max-width: 768px) {
+    max-width: calc(100% - 50px);
+    height: 416px;
+    flex-direction: column;
+  }
+
   @media (max-width: 325px) {
     margin: 0 auto;
     padding-top: 78.3px;
     max-width: 288px;
     height: 396px;
-    flex-direction: column;
   }
 `;
 
 const ListItem = styled.li`
   margin-right: 32px;
   max-width: 95px;
+  width: auto;
   height: 19px;
   font-style: normal;
   font-weight: normal;
@@ -31,7 +37,7 @@ const ListItem = styled.li`
   line-height: 21px;
   color: #616161;
   text-decoration: none;
-  overflow: hidden;
+  text-align: center;
 
   &:hover {
     color: #000;
@@ -42,10 +48,26 @@ const ListItem = styled.li`
     margin-right: 0;
   }
 
-  .link-to {
+  .Styledlink-to {
     text-decoration: none;
   }
-  
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    max-width: calc(100% - 50px);
+    height: 39px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    line-height: 35px;
+    text-align: center;
+    color: #000;
+
+    &:first-child {
+      margin-top: 15px;
+    }
+  }
+
   @media (max-width: 325px) {
     max-width: 288px;
     height: 39px;
@@ -63,33 +85,37 @@ const ListItem = styled.li`
   }
 `;
 
+const StyledLink = styled(Link)`
+  width: auto
+`;
+
 const NavList = ({ location }) => {
   return location.pathname === "/" ? (
     <List>
       <ListItem>
-        <Link to="requests" smooth={true}>
+        <StyledLink to="requests" smooth={true}>
           We can help!
-        </Link>
+        </StyledLink>
       </ListItem>
       <ListItem>
-        <Link to="about" smooth={true}>
+        <StyledLink to="about" smooth={true}>
           About
-        </Link>
+        </StyledLink>
       </ListItem>
       <ListItem>
-        <Link to="start" smooth={true}>
+        <StyledLink to="start" smooth={true}>
           How to Start
-        </Link>
+        </StyledLink>
       </ListItem>
       <ListItem>
-        <Link to="projects" smooth={true}>
+        <StyledLink to="projects" smooth={true}>
           Projects
-        </Link>
+        </StyledLink>
       </ListItem>
       <ListItem>
-        <Link to="contacts" smooth={true}>
+        <StyledLink to="contacts" smooth={true}>
           Contacts
-        </Link>
+        </StyledLink>
       </ListItem>
     </List>
   ) : (
