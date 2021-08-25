@@ -6,7 +6,6 @@ export const Card = styled.div`
     justify-content: center;
     align-content: center;
     display: flex;
-    background-color: green;
     border-radius: 14px;
     margin: 0;
 `;
@@ -429,9 +428,9 @@ export const StudentsRev = styled.p`
 
 
 
-// USEFULL SECTION
+// ICONBOX SECTION
 
-export const UsefullWrapper = styled.div`
+export const IconBoxWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -452,11 +451,11 @@ export const ImageWrapper = styled.div`
     }
 `;
 
-export const UsefullImage = styled.img`
+export const IconBoxImage = styled.img`
 
 `;
 
-export const UsefullTitle = styled.h2`
+export const IconBoxTitle = styled.h2`
     width: 400px;
     font-family: 'SuisseInti-Book';
     font-style: normal;
@@ -475,7 +474,7 @@ export const UsefullTitle = styled.h2`
     }
 `;
 
-export const UsefullText = styled.p`
+export const IconBoxText = styled.p`
     width: 400px;
     font-family: 'SuisseInti-Book';
     font-style: normal;
