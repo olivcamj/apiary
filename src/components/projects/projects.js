@@ -1,5 +1,5 @@
 import React from 'react';
-import { WrapperDiv, Container, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectsLinkWrapper, ProjectCardWrapper, ProjectsBottomLinksWrapper, ProjectButton, ProjectsIntroWrapper, TextWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro, ProjectButtonBottom  } from './projects.style';
+import { WrapperDiv, Container, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectsLinkWrapper, ProjectCardWrapper, ProjectsBottomLinksWrapper, ProjectButton, ProjectsIntroWrapper, TextWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro, ProjectButtonBottom, ProjectCover, ProjectInfoWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, ReviewLink, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, HeaderStudentWrapper } from './projects.style';
 
 import BounceLoader from "react-spinners/ClipLoader";
 import { client } from '../../helper/client';
@@ -55,42 +55,67 @@ const Projects = () => {
 
                 {isLoaded
                     ?
-                    
-                    projectContent.map((element, i) => {
-                            console.log(element.fields.student1.fields.file.url)
-                        return (    
-                        
-                                <ProjectCardWrapper key={i}>
-                                    <ProjectCard
-                                        projectTitle={element.fields.title}
-                                        projectIntro={element.fields.intro}
-                                        projectDate={element.fields.createdin}
-                                    // href={}
-                                    >
-                                        <CoverCard
-                                            coverPic={element.fields.coverImg.fields.file.url}
-                                        ></CoverCard>
-                                    </ProjectCard>
 
-                                    <BottomCards>
-                                        <ClientCard
-                                            clientName={element.fields.clientName}
-                                            clientPic={element.fields.clientPic.fields.file.url}
-                                            clientPos={element.fields.clientPos}
-                                            clientRev={element.fields.clientReview}
-                                        ></ClientCard>
-                                        <StudentsCard
-                                            studentsTeam={'Students Team'}
-                                            studentName1={element.fields.studentName4}
-                                            studentsReview={element.fields.studentText}
-                                            studentPic={element.fields.student1.fields.file.url}
-                                        ></StudentsCard>
-                                    </BottomCards>
-                                </ProjectCardWrapper>
+                    projectContent.map((element, i) => {
+                        console.log(element.fields.student1.fields.file.url)
+                        return (
+
+                            <ProjectCardWrapper key={i}>
+                                <ProjectCard>
+                                    <CoverCard>
+                                        <ProjectCover src={element.fields.coverImg.fields.file.url} />
+                                    </CoverCard>
+
+                                    <ProjectInfoWrapper>
+                                        <ProjectTitle>{element.fields.title}</ProjectTitle>
+                                        <ProjectIntro>{element.fields.intro}</ProjectIntro>
+                                        <ProjectDate>{element.fields.createdin}</ProjectDate>
+                                        <ProjectLink
+                                            // href={href} 
+                                            target="_blank">Visit wbesite →</ProjectLink>
+                                    </ProjectInfoWrapper>
+                                </ProjectCard>
+
+                                <BottomCards>
+                                    <ClientCard>
+                                        <ClientWrapper>
+                                            <HeaderWrapper>
+                                                <ClientPicWrapper>
+                                                    <ClientPic src={element.fields.clientPic.fields.file.url} />
+                                                </ClientPicWrapper>
+                                                <ClientInfoWrapper>
+                                                    <ClientName>{element.fields.clientName}</ClientName>
+                                                    <ClientPos>{element.fields.clientPos}</ClientPos>
+                                                </ClientInfoWrapper>
+                                            </HeaderWrapper>
+                                            <ClientRev>{element.fields.clientReview}</ClientRev>
+                                            <ReviewLink
+                                            // href={reviewLink}
+                                            >Read full review</ReviewLink>
+                                        </ClientWrapper>
+                                    </ClientCard>
+                                    <StudentsCard>
+                                        <StudentsWrapper>
+                                            <HeaderStudentWrapper>
+                                                <StudentsPicsWrapper>
+                                                    <StudentsPics src={element.fields.student1.fields.file.url} />
+                                                    <StudentsPics src={element.fields.student1.fields.file.url} />
+                                                    <StudentsPics src={element.fields.student1.fields.file.url} />
+                                                </StudentsPicsWrapper>
+                                                <StudentsInfoWrapper>
+                                                    <StudentsTitle>{'Students Team'}</StudentsTitle>
+                                                    <StudentsNames>{element.fields.studentName4},{''} {element.fields.studentName4}, {''}{element.fields.studentName4}</StudentsNames>
+                                                </StudentsInfoWrapper>
+                                            </HeaderStudentWrapper>
+                                            <StudentsRev>{element.fields.studentText}</StudentsRev>
+                                        </StudentsWrapper>
+                                    </StudentsCard>
+                                </BottomCards>
+                            </ProjectCardWrapper>
                         )
                     })
 
-                    
+
                     :
                     <BounceLoader color={'#000'} loading={true} size={60} />
 
