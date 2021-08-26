@@ -80,6 +80,8 @@ export const CardWrapper = styled.div`
     justify-content: center;
     align-content: center;
 
+
+
     @media screen and (max-width: 400px) {
         flex-direction: column;
     }
@@ -91,6 +93,10 @@ export const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"}
     max-width: 400px;
     height: 400px;
     background: transparent;
+
+    &:hover {
+        cursor: pointer;
+    }
 
     &:nth-child(2) {
         margin-left: 40px;

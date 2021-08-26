@@ -4,8 +4,9 @@ import { Wrapper } from '../Wrapper';
 import image1 from '../../images/web-dev.png';
 import image2 from '../../images/data-analysis.png';
 import image3 from '../../images/data-science.png';
+import { Link } from 'react-router-dom';
 
-const Requests= () => {
+const Requests = () => {
 
     return (
         <Wrapper>
@@ -15,12 +16,15 @@ const Requests= () => {
                 <RequestsIntro>We carry out important, non-urgent tasks, with results that you can use in your work.</RequestsIntro>
 
                 <CardWrapper>
-                    <RequestsCard
-                        requestsImage={image1}
-                        requestsTitle={'Web development'}
-                        requestsHash={'#programing'}
-                    >
-                    </RequestsCard>
+                    <Link to="/webdev">
+                        <RequestsCard
+                            requestsImage={image1}
+                            requestsTitle={'Web development'}
+                            requestsHash={'#programing'}
+                        >
+                        </RequestsCard>
+                    </Link>
+
                     <RequestsCard
                         requestsImage={image2}
                         requestsTitle={'Data analysis'}
