@@ -62,8 +62,8 @@ export const ChatWrapper = styled.div`
         padding: 0 40px;
     }
 
-    @media screen and (max-width: 320px) {
-        padding: 0 16px;
+    @media screen and (max-width: 340px) {
+        padding: 0 6px;
     }
 
 `;
