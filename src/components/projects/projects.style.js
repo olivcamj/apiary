@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { GlobalCard } from '../global-components/global-card/globalCard';
 import { GlobalButton } from '../global-components/global-components';
 import { Wrapper } from '../Wrapper';
@@ -786,5 +786,55 @@ export const ProjectButtonBottom = styled(GlobalButton).attrs({ className: "proj
 `;
 
 
-// TEST
+// KEYFRAMES
+
+const placeholderShimmer = keyframes`
+    0% {
+    background-position: -468px 0;
+    }
+    100% {
+    background-position: 468px 0; 
+    }
+`;
+
+export const LinesWrapper = styled.div.attrs({ className: "placeHolderWrapper" })`
+    width: 500px;
+    height: 200px;
+    display: flex;
+    position: absolute;
+    bottom: 100;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-self: center;
+
+    @media screen and (max-width: 730px) {
+    width: 200px;
+}
+`;
+
+export const Lines = styled.line.attrs({ className: "placeHolderLines" })`
+    height: 20px;
+    margin-top: 10px;
+    width: 400px; 
+    align-self: center;
+    ${props => props.shine && css`
+    background: #f6f7f8;
+    background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+    background-repeat: no-repeat;
+    background-size: 800px 104px;
+    display: inline-block;
+    position: relative;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: ${placeholderShimmer};
+    -webkit-animation-timing-function: linear;
+`}
+
+@media screen and (max-width: 730px) {
+    width: 200px;
+}
+`;
+
 

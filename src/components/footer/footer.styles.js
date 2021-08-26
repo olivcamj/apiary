@@ -1,26 +1,20 @@
 import styled from 'styled-components';
-import { Wrapper } from '../Wrapper.js';
 
-
-export const WrapperDiv = styled(Wrapper)`
-    flex-direction: row;
+export const Container = styled.div`
+    display: flex;
     justify-content: space-between;
     align-self: center;
-    height: 280px;
     position: relative;
-    box-sizing: border-box;
-    padding: 80px 80px 60px 80px;
     max-width: 1440px;
+    margin: 0;
 
     @media screen and (max-width: 960px) {
-        padding: 80px 40px 60px 40px;
         flex-direction: column;
         height: 100%;
     }
 
     @media screen and (max-width: 830px) {
         max-width: 830px;
-        padding: 40px 16px 40px 16px;
     }
 
     @media screen and (max-width: 320px) {
@@ -30,8 +24,8 @@ export const WrapperDiv = styled(Wrapper)`
 `;
 
 export const LeftDiv = styled.div`
-    width: 100%;
-    height: 100%;
+    position: relative;
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,15 +44,21 @@ export const LeftDiv = styled.div`
     }
 
     @media screen and (max-width: 960px) {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
         margin-bottom: 40px;
     }
 
     @media screen and (max-width: 830px) {
+        display: flex;
         flex-direction: column;
-        
     }
 
+    @media screen and (max-width: 320px) {
+
+        margin-bottom: 60px;
+        
+    }
 `;
 
 export const AboutUs = styled.p`
@@ -66,6 +66,10 @@ export const AboutUs = styled.p`
     @media screen and (max-width: 960px) {
         margin: 0 20px 0 0;
         width: 120px;
+    }
+
+    @media screen and (max-width: 960px) {
+        margin: 0;
     }
 
     @media screen and (max-width: 830px) {
@@ -76,7 +80,6 @@ export const AboutUs = styled.p`
 export const Email = styled.p`
     margin: 0;
     @media screen and (max-width: 960px) {
-        margin: 0 20px 0 0;
     }
 
     @media screen and (max-width: 830px) {
@@ -105,14 +108,15 @@ export const Tfn = styled.p`
         width: auto;
         margin: 0 auto 10px auto;
     }
+
 `;
 
 export const CenterDiv = styled.div`
-    width: 100%;
-    height: 100%;
+    position: relative;
+    height: auto;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 
     @media screen and (max-width: 960px) {
         margin-bottom: 40px;
@@ -125,10 +129,9 @@ export const FooterInfo = styled.div`
     height: 92px;
     background: #FFFFFF;
     border-radius: 14px;
-    align-self: center;
-
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 380px) {
         width: 300px;
+        
     }
 `;
 
@@ -142,7 +145,7 @@ export const Info = styled.p`
     color: #000000;
     margin: 16px 32px;
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 380px) {
         width: 268px;
         font-size: 18px;
         margin: 16px;
@@ -150,8 +153,8 @@ export const Info = styled.p`
 `;
 
 export const RightDiv = styled.div`
-    width: 100%;
-    height: 100%;
+    position: relative;
+    height: auto;
     position: relative;
     flex-direction: column;
     justify-content: center;
@@ -179,15 +182,14 @@ export const RightDiv = styled.div`
 export const Top = styled.p`
     margin: 0;
     text-align: right;
-
-    @media screen and (max-width: 960px) {
-        
-    }
+    display: inline-block;
+    
 
     @media screen and (max-width: 830px) {
+        width: auto;
         position: absolute;
-        right: 16px;
-        top: 40px;
+        right: 0;
+        top: 0;
     }
 `;
 

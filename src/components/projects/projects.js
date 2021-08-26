@@ -1,7 +1,7 @@
 import React from 'react';
-import { WrapperDiv, Container, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectsLinkWrapper, ProjectCardWrapper, ProjectsBottomLinksWrapper, ProjectButton, ProjectsIntroWrapper, TextWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro, ProjectButtonBottom, ProjectCover, ProjectInfoWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, ReviewLink, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, HeaderStudentWrapper } from './projects.style';
+import { WrapperDiv, Container, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectsLinkWrapper, ProjectCardWrapper, ProjectsBottomLinksWrapper, ProjectButton, ProjectsIntroWrapper, TextWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro, ProjectButtonBottom, ProjectCover, ProjectInfoWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, ReviewLink, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, HeaderStudentWrapper, Lines, LinesWrapper } from './projects.style';
 
-import BounceLoader from "react-spinners/ClipLoader";
+// import BounceLoader from "react-spinners/ClipLoader";
 import { client } from '../../helper/client';
 
 import imageIntro from '../../images/projects-intro.png';
@@ -15,6 +15,7 @@ const Projects = () => {
         client(id)
             .then(res => {
                 setProjectData(res.items);
+                setIsLoaded(true);
             })
     }
 
@@ -29,10 +30,11 @@ const Projects = () => {
     }, []);
 
     const projectContent = projectData;
-    console.log(projectContent)
-    setTimeout(() => {
-        setIsLoaded(true)
-    }, 2000);
+
+    
+    // setTimeout(() => {
+    //     setIsLoaded(true)
+    // }, 2000);
 
     return (
         <WrapperDiv neutral>
@@ -55,9 +57,7 @@ const Projects = () => {
 
                 {isLoaded
                     ?
-
                     projectContent.map((element, i) => {
-                        console.log(element.fields.student1.fields.file.url)
                         return (
 
                             <ProjectCardWrapper key={i}>
@@ -74,6 +74,7 @@ const Projects = () => {
                                             // href={href} 
                                             target="_blank">Visit wbesite →</ProjectLink>
                                     </ProjectInfoWrapper>
+
                                 </ProjectCard>
 
                                 <BottomCards>
@@ -93,6 +94,7 @@ const Projects = () => {
                                             // href={reviewLink}
                                             >Read full review</ReviewLink>
                                         </ClientWrapper>
+
                                     </ClientCard>
                                     <StudentsCard>
                                         <StudentsWrapper>
@@ -114,10 +116,42 @@ const Projects = () => {
                             </ProjectCardWrapper>
                         )
                     })
-
-
                     :
-                    <BounceLoader color={'#000'} loading={true} size={60} />
+                    <ProjectCardWrapper>
+                        <ProjectCard>
+                            <CoverCard>
+                                <LinesWrapper>
+                                    <Lines shine></Lines>
+                                    <Lines shine></Lines>
+                                    <Lines shine></Lines>
+                                </LinesWrapper>
+                            </CoverCard>
+                            <CoverCard>
+                                <LinesWrapper>
+                                    <Lines shine></Lines>
+                                    <Lines shine></Lines>
+                                    <Lines shine></Lines>
+                                </LinesWrapper>
+                            </CoverCard>
+                        </ProjectCard>
+                        <BottomCards>
+                            <ClientCard>
+                                <LinesWrapper>
+                                    <Lines shine></Lines>
+                                    <Lines shine></Lines>
+                                    <Lines shine></Lines>
+                                </LinesWrapper>
+                            </ClientCard>
+                            <StudentsCard>
+                                <LinesWrapper>
+                                    <Lines shine></Lines>
+                                    <Lines shine></Lines>
+                                    <Lines shine></Lines>
+                                </LinesWrapper>
+                            </StudentsCard>
+                        </BottomCards>
+                    </ProjectCardWrapper>
+
 
                 }
 
