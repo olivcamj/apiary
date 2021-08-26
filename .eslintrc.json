@@ -1,15 +1,21 @@
 {
   "extends": [
+    "plugin:react/recommended",
     "eslint:recommended",
     "prettier"
   ],
   "plugins": [],
-
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off"
+  },
   "parserOptions": {
-    "ecmaVersion": "latest",
+    "ecmaVersion": 11,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "modules": true
     }
   },
   "env": {
