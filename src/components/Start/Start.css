@@ -1,0 +1,36 @@
+.verticle-timeline {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0;
+}
+
+.vertical-timeline::before {
+  background: #424242;
+  top: 260px;
+  width: 2px;
+  height: 65%;
+}
+
+.vertical-timeline-element-icon {
+  top: 225px;
+}
+
+.vertical-timeline-element-content {
+  box-shadow: none;
+  max-width: 580px;
+}
+
+.vertical-timeline-element-content p {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.verticle-timeline.vertical-timeline--two-columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+}
