@@ -43,11 +43,22 @@ export const LeftDiv = styled.div`
         line-height: 30px;
     }
 
-    @media screen and (max-width: 830px) {
-        flex-direction: column;
-        
+    @media screen and (max-width: 960px) {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        margin-bottom: 40px;
     }
 
+    @media screen and (max-width: 830px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media screen and (max-width: 320px) {
+
+        margin-bottom: 60px;
+        
+    }
 `;
 
 export const AboutUs = styled.p`
@@ -55,6 +66,10 @@ export const AboutUs = styled.p`
     @media screen and (max-width: 960px) {
         margin: 0 20px 0 0;
         width: 120px;
+    }
+
+    @media screen and (max-width: 960px) {
+        margin: 0;
     }
 
     @media screen and (max-width: 830px) {
@@ -65,7 +80,6 @@ export const AboutUs = styled.p`
 export const Email = styled.p`
     margin: 0;
     @media screen and (max-width: 960px) {
-        margin: 0 20px 0 0;
     }
 
     @media screen and (max-width: 830px) {
@@ -94,6 +108,7 @@ export const Tfn = styled.p`
         width: auto;
         margin: 0 auto 10px auto;
     }
+
 `;
 
 export const CenterDiv = styled.div`
@@ -116,6 +131,7 @@ export const FooterInfo = styled.div`
     border-radius: 14px;
     @media screen and (max-width: 380px) {
         width: 300px;
+        
     }
 `;
 
