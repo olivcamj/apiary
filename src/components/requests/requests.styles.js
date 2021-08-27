@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { GlobalCard } from '../global-components/global-card/globalCard';
 
+import { Link } from 'react-router-dom';
+
 export const Container = styled.div`
     width: 100%;
     max-width: 1280px;
@@ -74,9 +76,9 @@ export const CardWrapper = styled.div`
     display: flex;
     width: 100%;
     height: 100%;
+    row-gap: 40px;
     display: inline-flex;
     flex-wrap: wrap;
-    row-gap: 40px;
     justify-content: center;
     align-content: center;
 
@@ -84,7 +86,18 @@ export const CardWrapper = styled.div`
 
     @media screen and (max-width: 400px) {
         flex-direction: column;
+        row-gap: 32px;
     }
+`;
+
+export const LinkToProject = styled(Link).attrs({className: "links"})`
+    width: auto;
+    text-decoration: none;
+    &:nth-child(2) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
 `;
 
 export const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"})`

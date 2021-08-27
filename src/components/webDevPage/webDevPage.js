@@ -9,7 +9,6 @@ import { client } from '../../helper/client';
 
 const WebDevPage = () => {
     const [isLoaded, setIsLoaded] = React.useState(false);
-    // const [contentfulId, setContentfulId] = React.useState('');
     const [projectData, setProjectData] = React.useState({});
 
     const contentfullData = (id) => {
@@ -20,19 +19,14 @@ const WebDevPage = () => {
             })
     }
 
-    // const handleId = (projectId) => {
-    //     const thisIsId = projectId;
-    //     // setContentfulId(thisIsId);
-    //     contentfullData(thisIsId);
-    // }
-
     React.useEffect(() => {
         contentfullData('projects')
     }, []);
 
     const projectContent = projectData;
     return (
-        <Wrapper neutral>
+        <>
+        <Wrapper>
             <IntroWrapper>
                 <TextWrapper>
                     <Title>What web development requests can we help with?</Title>
@@ -61,7 +55,8 @@ const WebDevPage = () => {
                     <ProjectPageCardText>We are able to work on highly complex websites with deeply nested pages.</ProjectPageCardText>
                 </ProjectPageCard>
             </CardWrapper>
-
+            </Wrapper>
+            <Wrapper neutral>
             <ProjectsIntroWrapper>
                     <TextIntroWrapper>
                         <ProjectIntroTitle>Delegate tasks to those who enjoy them</ProjectIntroTitle>
@@ -173,6 +168,7 @@ const WebDevPage = () => {
 
             }
         </Wrapper>
+        </>
     )
 }
 

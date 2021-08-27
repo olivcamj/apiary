@@ -1,11 +1,28 @@
 import styled, { keyframes, css } from "styled-components";
 import { GlobalCard } from '../global-components/global-card/globalCard';
 
+
 export const IntroWrapper = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
     position: relative;
+    @media screen and (max-width: 1280px) {
+        width: 620px;
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 620px;
+        justify-content: space-between;
+        align-content: space-between;
+        flex-direction: column;
+    }
+
+    @media screen and (max-width: 620px) {
+        width: 288px;
+        align-self: center;
+    }
 
 `;
 
@@ -14,6 +31,21 @@ export const TextWrapper = styled.div`
     height: auto;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 1280px) {
+        width: 620px;
+        align-self: flex-start;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 620px;
+        align-self: center;
+    }
+
+    @media screen and (max-width: 620px) {
+        width: 288px;
+        align-self: center;
+    }
 `;
 
 export const Title = styled.h2`
@@ -25,6 +57,20 @@ export const Title = styled.h2`
     font-size: 48px;
     line-height: 56px;
     color: #000000;
+    @media screen and (max-width: 1280px) {
+        width: 453px;
+        align-self: flex-start;
+        font-size: 48px;
+        line-height: 56px;
+    }
+    @media screen and (max-width: 800px) {
+        max-width: 620px;
+        align-self: center;
+    }
+    @media screen and (max-width: 620px) {
+        width: 288px;
+        align-self: center;
+    }
 `;
 
 export const TextIntro = styled.p`
@@ -36,13 +82,46 @@ export const TextIntro = styled.p`
     font-size: 30px;
     line-height: 35px;
     color: #000000;
+    @media screen and (max-width: 1280px) {
+        width: 453px;
+        align-self: flex-start;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    @media screen and (max-width: 800px) {
+        max-width: 620px;
+        align-self: center;
+    }
+    @media screen and (max-width: 620px) {
+        width: 288px;
+        align-self: center;
+    }
 `;
 
 
 export const ImageWrapper = styled.div`
     width: 267px;
     height: 217px;
+    margin-left: 100px;
+
+    @media screen and (max-width: 1280px) {
+        margin-left: 0;
+    }
+
+    @media screen and (max-width: 800px) {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    @media screen and (max-width: 620px) {
+        width: 288px;
+        align-self: center;
+    }
 `;
+
+
 
 export const Image = styled.div`
     width: 267px;
@@ -50,8 +129,15 @@ export const Image = styled.div`
     background-position: center center;
     background-repeat: no-repeat;
     position: absolute;
-    top: -50px;
+    top: -40px;
     right: 100px;
+    @media screen and (max-width: 1280px) {
+        right: 0;
+    }
+    @media screen and (max-width: 800px) {
+        position: relative;
+        top: 0;
+    }
 `;
 
 // INFO CARDS
@@ -61,16 +147,14 @@ export const CardWrapper = styled.div`
     overflow: visible;
     display: flex;
     width: 100%;
-    height: 100%;
-    display: inline-flex;
     flex-wrap: wrap;
-    row-gap: 40px;
     justify-content: center;
     align-content: center;
     margin: 100px auto;
 
     @media screen and (max-width: 400px) {
         flex-direction: column;
+        margin: 40px auto;
     }
 `;
 
@@ -92,18 +176,27 @@ export const ProjectPageCard = styled(GlobalCard).attrs({className: "ProjectPage
         margin-right: 40px;
     }
 
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 510px) {
         width: 300px;
         height: 300px;
         margin: 0 auto;
+
         &:nth-child(2) {
         margin-left: auto;
         margin-right: auto;
         margin-top: 32px;
         margin-bottom: 32px;
         }
+    }
 
-        
+    @media screen and (max-width: 320px) {
+
+        &:nth-child(2) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        }
     }
     
 `;
@@ -117,6 +210,10 @@ export const ProjectPageCardNumber = styled.p`
     text-align: center;
     color: #FF9900;
     margin: 0 auto;
+    @media screen and (max-width: 510px) {
+        font-size: 48px;
+        line-height: 56px;
+    }
 `;
 
 export const ProjectPageCardTitle = styled.p`
@@ -128,6 +225,11 @@ export const ProjectPageCardTitle = styled.p`
     text-align: center;
     color: #000000;
     margin: 16px auto 28px auto;
+
+    @media screen and (max-width: 510px) {
+        font-size: 24px;
+        line-height: 28px;
+    }
 `;
 
 
@@ -140,6 +242,11 @@ export const ProjectPageCardText = styled.p`
     text-align: center;
     color: #000000;
     margin: 0 auto;
+
+    @media screen and (max-width: 510px) {
+        font-size: 16px;
+        line-height: 20px;
+    }
 `;
 
 
@@ -303,6 +410,7 @@ export const ProjectCard = styled(GlobalCard).attrs({ className: "projectCard" }
     @media screen and (max-width: 730px) {
         width: 300px;
         height: 498px;
+        margin-bottom: 0;
     }
 `;
 
@@ -487,6 +595,8 @@ export const BottomCards = styled.div`
     justify-content: center;
     align-content: center;
     box-sizing: border-box;
+    margin: 0 auto;
+
 
     @media screen and (max-width: 960px) {
         flex-direction: column;
@@ -496,8 +606,8 @@ export const BottomCards = styled.div`
 
 export const ClientCard = styled(GlobalCard).attrs({ className: "clientCard" })`
     background-color: #FFFFFF;
-    max-width: 630px;
-    max-height: 378px;
+    width: 630px;
+    height: 378px;
     margin-right: 20px;
     box-sizing: border-box;
     
@@ -508,31 +618,27 @@ export const ClientCard = styled(GlobalCard).attrs({ className: "clientCard" })`
 
     @media screen and (max-width: 960px) {
         width: 630px;
-        height: 378px;
-        margin-right: 0;
-        margin: 0 auto 20px auto;
+        margin: 20px auto;
     }
 
     @media screen and (max-width: 730px) {
         width: 300px;
+        height: 383px;
         font-size: 32px;
         line-height: 37px;
-        height: 383px;
-        margin: 0 auto 20px auto;
     }
-
     
 `;
 
 export const ClientWrapper = styled.div`
         width: 565px;
-        margin: 32px 33px 32px auto;
+        margin: 32px 33px 32px 33px;
         display: flex;
         flex-direction: column;
         position: relative;
 
     @media screen and (max-width: 1280px) {
-        margin: 20px 20px 20px auto;
+        margin: 20px;
         padding-left: 20px;
         width: 442px;
     }

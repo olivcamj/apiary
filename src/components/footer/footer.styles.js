@@ -113,6 +113,7 @@ export const Tfn = styled.p`
 
 export const CenterDiv = styled.div`
     position: relative;
+    width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -130,7 +131,8 @@ export const FooterInfo = styled.div`
     background: #FFFFFF;
     border-radius: 14px;
     @media screen and (max-width: 380px) {
-        width: 300px;
+        max-width: 300px;
+        width: 100%;
         
     }
 `;

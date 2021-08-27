@@ -410,6 +410,8 @@ export const BottomCards = styled.div`
     justify-content: center;
     align-content: center;
     box-sizing: border-box;
+    margin: 0 auto;
+
 
     @media screen and (max-width: 960px) {
         flex-direction: column;
@@ -419,8 +421,8 @@ export const BottomCards = styled.div`
 
 export const ClientCard = styled(GlobalCard).attrs({ className: "clientCard" })`
     background-color: #FFFFFF;
-    max-width: 630px;
-    max-height: 378px;
+    width: 630px;
+    height: 378px;
     margin-right: 20px;
     box-sizing: border-box;
     
@@ -431,31 +433,27 @@ export const ClientCard = styled(GlobalCard).attrs({ className: "clientCard" })`
 
     @media screen and (max-width: 960px) {
         width: 630px;
-        height: 378px;
-        margin-right: 0;
-        margin: 0 auto 20px auto;
+        margin: 20px auto;
     }
 
     @media screen and (max-width: 730px) {
         width: 300px;
+        height: 383px;
         font-size: 32px;
         line-height: 37px;
-        height: 383px;
-        margin: 0 auto 20px auto;
     }
-
     
 `;
 
 export const ClientWrapper = styled.div`
         width: 565px;
-        margin: 32px 33px 32px auto;
+        margin: 32px 33px 32px 33px;
         display: flex;
         flex-direction: column;
         position: relative;
 
     @media screen and (max-width: 1280px) {
-        margin: 20px 20px 20px auto;
+        margin: 20px;
         padding-left: 20px;
         width: 442px;
     }
