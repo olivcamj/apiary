@@ -9,6 +9,7 @@ import Requests from './components/requests/requests';
 import Projects from './components/projects/projects';
 import About from './components/About';
 import Footer from './components/footer/footer';
+import Start from './components/Start/Start';
 
 import WebDevPage from './components/webDevPage/webDevPage';
 import DataAnalysisPage from './components/dataAnalysisPage/dataAnalysisPage';
@@ -24,6 +25,7 @@ function App() {
           <Useful />
           <Requests />
           <Bubble />
+          <Start />
           <About />
           <Projects />
         </Route>
@@ -44,7 +46,6 @@ function App() {
 
 
       </Switch>
-
       <Footer />
     </div>
   );
