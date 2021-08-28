@@ -8,11 +8,11 @@
   background: #424242;
   top: 260px;
   width: 2px;
-  height: 65%;
+  height: 45%;
 }
 
 .vertical-timeline-element-icon {
-  top: 225px;
+  top: 213px;
 }
 
 .vertical-timeline-element-content {
@@ -33,4 +33,12 @@
   max-width: 1280px;
   margin: 0;
   padding: 0;
+}
+
+.vertical-timeline-element:first-child {
+  margin-bottom: -230px;
+}
+
+.vertical-timeline-element:last-child {
+  margin-top: -295px;
 }
