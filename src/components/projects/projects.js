@@ -51,7 +51,7 @@ const Projects = () => {
                 <ProjectsLinkWrapper>
                     <ProjectButton onClick={() => handleId('projects')} projects >Web development</ProjectButton>
                     <ProjectButton onClick={() => handleId('dataAnalysisProjects')} projects >Data analysis</ProjectButton>
-                    <ProjectButton projects >Data science</ProjectButton>
+                    <ProjectButton onClick={() => handleId('dataScienceProjects')} projects >Data science</ProjectButton>
                 </ProjectsLinkWrapper>
 
                 {isLoaded
