@@ -87,7 +87,9 @@ export const Email = styled.p`
         margin: 0 auto 10px auto;
     }
 `;
-export const Linkedin = styled.p`
+export const Linkedin = styled.a`
+    color: #DDDDDD;
+    text-decoration: none;
     margin: 0;
     @media screen and (max-width: 960px) {
         margin: 0 20px 0 0;
@@ -118,6 +120,7 @@ export const CenterDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     @media screen and (max-width: 960px) {
         margin-bottom: 40px;
@@ -181,11 +184,12 @@ export const RightDiv = styled.div`
     }
 `;
 
-export const Top = styled.p`
+export const Top = styled.a`
     margin: 0;
     text-align: right;
     display: inline-block;
-    
+    text-decoration: none;
+    color: #DDDDDD;
 
     @media screen and (max-width: 830px) {
         width: auto;
