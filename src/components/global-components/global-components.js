@@ -24,5 +24,9 @@ export const GlobalButton = styled.button`
   font-style: normal;
   font-weight: 400;
 
+  &:hover {
+    transform: scale(1.05);
+  }
+
 `;
 
