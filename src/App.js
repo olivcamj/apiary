@@ -18,7 +18,6 @@ import DataSciencePage from './components/dataSciencePage/dataSciencePage';
 function App() {
   return (
     <div className="app">
-
       <Switch>
         <Route path="/" exact>
           <Header />
@@ -29,21 +28,10 @@ function App() {
           <About />
           <Projects />
         </Route>
+
         <Route path="/webdev" component={WebDevPage} exact />
-        <Route path="/dataanalysis" component={DataAnalysisPage} exact /> 
+        <Route path="/dataanalysis" component={DataAnalysisPage} exact />
         <Route path="/datascience" component={DataSciencePage} exact />
-        
-        {/* <Route path="/webdev">
-          <WebDevPage />
-        </Route> */}
-
-        <Route path="/data-analysis">
-
-        </Route>
-        <Route path="/data-science">
-
-        </Route>
-
 
       </Switch>
       <Footer />
