@@ -2,7 +2,6 @@ import './App.css';
 
 import { Route, Switch } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Useful from './components/Useful/Useful';
 import Bubble from './components/bubble/bubble';
@@ -19,7 +18,6 @@ import DataSciencePage from './components/dataSciencePage/dataSciencePage';
 function App() {
   return (
     <div className="app">
-      <Navbar />
       <Switch>
         <Route path="/" exact>
           <Header />
