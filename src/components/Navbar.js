@@ -133,9 +133,9 @@ const Button = styled.button`
     color: #fff;
     align-self: center;
   }
-   @media (max-width: 325px) {
+  @media (max-width: 325px) {
     margin-top: 70px;
-   }
+  }
 `;
 
 const Navbar = () => {

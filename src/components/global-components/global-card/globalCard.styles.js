@@ -6,7 +6,7 @@ export const Card = styled.div`
     justify-content: center;
     align-content: center;
     display: flex;
-    border-radius: 14px;
+    border-radius: 25px;
     margin: 0;
 `;
 // PROJECT COVER CARD
