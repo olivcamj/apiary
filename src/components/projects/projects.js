@@ -2,11 +2,6 @@ import React from 'react';
 import {
   WrapperDiv,
   Container,
-  CoverCard,
-  ProjectCard,
-  BottomCards,
-  ClientCard,
-  StudentsCard,
   ProjectsLinkWrapper,
   ProjectsBottomLinksWrapper,
   ProjectButton,
@@ -17,11 +12,9 @@ import {
   ProjectIntroText,
   ImageProjectIntro,
   ProjectButtonBottom,
-  ProjectCardWrapper,
-  Lines,
-  LinesWrapper
 } from './projects.style';
 import ProjectCardGroup from './ProjectCardGroup';
+import LoadingProjectCards from './LoadingProjectCards';
 
 import { client } from '../../helper/client';
 
@@ -78,40 +71,7 @@ const Projects = () => {
 						)
 					})
 					:
-					<ProjectCardWrapper>
-						<ProjectCard>
-							<CoverCard>
-								<LinesWrapper>
-									<Lines shine></Lines>
-									<Lines shine></Lines>
-									<Lines shine></Lines>
-								</LinesWrapper>
-							</CoverCard>
-							<CoverCard>
-								<LinesWrapper>
-									<Lines shine></Lines>
-									<Lines shine></Lines>
-									<Lines shine></Lines>
-								</LinesWrapper>
-							</CoverCard>
-						</ProjectCard>
-						<BottomCards>
-							<ClientCard>
-								<LinesWrapper>
-									<Lines shine></Lines>
-									<Lines shine></Lines>
-									<Lines shine></Lines>
-								</LinesWrapper>
-							</ClientCard>
-							<StudentsCard>
-								<LinesWrapper>
-									<Lines shine></Lines>
-									<Lines shine></Lines>
-									<Lines shine></Lines>
-								</LinesWrapper>
-							</StudentsCard>
-						</BottomCards>
-					</ProjectCardWrapper>
+					<LoadingProjectCards />
 				}
 
 				<ProjectsBottomLinksWrapper>
