@@ -1,4 +1,5 @@
 import { Wrapper } from '../Wrapper';
+import Bounce from 'react-reveal/Bounce';
 import { Container, BubbleTitle, ChatWrapper, LeftTextWrapper, IconWrapper, IconImage, OrangeCard, RightTextWrapper, WhiteCard, DelegateTaskButtonWrapper, DelegateButton } from './bubble.styles';
 
 import chatIcon from '../../images/ChatIcon.png';
@@ -40,16 +41,20 @@ const Bubble = () => {
                     {conversation.map((element, i) => {
                         return (
                             element.chatLeft ?
-                                <LeftTextWrapper key={i}>
-                                    <IconWrapper>
-                                        <IconImage src={chatIcon} />
-                                    </IconWrapper>
-                                    <OrangeCard chatText={conversation[i].chatText}></OrangeCard>
-                                </LeftTextWrapper>
+                                <Bounce left duration={2500}>
+                                    <LeftTextWrapper key={i}>
+                                        <IconWrapper>
+                                            <IconImage src={chatIcon} />
+                                        </IconWrapper>
+                                        <OrangeCard chatText={conversation[i].chatText}></OrangeCard>
+                                    </LeftTextWrapper>
+                                </Bounce>
                                 :
-                                <RightTextWrapper key={i}>
-                                    <WhiteCard chatText={conversation[i].chatText}></WhiteCard>
-                                </RightTextWrapper>
+                                <Bounce right duration={2500}>
+                                    <RightTextWrapper key={i}>
+                                        <WhiteCard chatText={conversation[i].chatText}></WhiteCard>
+                                    </RightTextWrapper>
+                                </Bounce>
                                 
                         )
                     })}

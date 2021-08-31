@@ -1,22 +1,256 @@
 import styled, { keyframes, css } from "styled-components";
 import { GlobalCard } from '../global-components/global-card/globalCard';
-import { GlobalButton } from '../global-components/global-components';
-import { Wrapper } from '../Wrapper';
 
-export const WrapperDiv = styled(Wrapper)`
-    @media screen and (max-width: 1024px) {
-        padding-bottom: 40px;
-}
-`;
-export const Container = styled.div`
+
+export const IntroWrapper = styled.div`
     width: 100%;
-    max-width: 1280px;
-    padding: 0;
+    height: 100%;
+    display: flex;
+    position: relative;
+    @media screen and (max-width: 1280px) {
+        width: 620px;
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 620px;
+        justify-content: space-between;
+        align-content: space-between;
+        flex-direction: column;
+    }
+
+    @media screen and (max-width: 620px) {
+        width: 288px;
+        align-self: center;
+    }
+
+`;
+
+export const TextWrapper = styled.div`
+    width: 840px;
+    height: auto;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 1280px) {
+        width: 620px;
+        align-self: flex-start;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 620px;
+        align-self: center;
+    }
+
+    @media screen and (max-width: 620px) {
+        width: 288px;
+        align-self: center;
+    }
+`;
+
+export const Title = styled.h2`
+    width: 620px;
+    margin: 0 0 40px 0;
+    font-family: 'SuisseInti-Book';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    color: #000000;
+    @media screen and (max-width: 1280px) {
+        width: 453px;
+        align-self: flex-start;
+        font-size: 48px;
+        line-height: 56px;
+    }
+    @media screen and (max-width: 800px) {
+        max-width: 620px;
+        align-self: center;
+    }
+    @media screen and (max-width: 620px) {
+        width: 288px;
+        align-self: center;
+    }
+`;
+
+export const TextIntro = styled.p`
+    width: 840px;
+    margin: 0;
+    font-family: 'SuisseInti-Book';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 35px;
+    color: #000000;
+    @media screen and (max-width: 1280px) {
+        width: 453px;
+        align-self: flex-start;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    @media screen and (max-width: 800px) {
+        max-width: 620px;
+        align-self: center;
+    }
+    @media screen and (max-width: 620px) {
+        width: 288px;
+        align-self: center;
+    }
+`;
+
+
+export const ImageWrapper = styled.div`
+    width: 267px;
+    height: 217px;
+    margin-left: 100px;
+
+    @media screen and (max-width: 1280px) {
+        margin-left: 0;
+    }
+
+    @media screen and (max-width: 800px) {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    @media screen and (max-width: 620px) {
+        width: 288px;
+        align-self: center;
+    }
+`;
+
+
+
+export const Image = styled.div`
+    width: 267px;
+    height: 217px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -40px;
+    right: 100px;
+    @media screen and (max-width: 1280px) {
+        right: 0;
+    }
+    @media screen and (max-width: 800px) {
+        position: relative;
+        top: 0;
+    }
+`;
+
+// INFO CARDS
+
+
+export const CardWrapper = styled.div`
+    overflow: visible;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    margin: 100px auto;
+
+    @media screen and (max-width: 400px) {
+        flex-direction: column;
+        margin: 40px auto;
+    }
 `;
+
+export const ProjectPageCard = styled(GlobalCard).attrs({className: "ProjectPageCard"})`
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 400px;
+    height: 377px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+
+    &:nth-child(2) {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    @media screen and (max-width: 510px) {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+
+        &:nth-child(2) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 32px;
+        margin-bottom: 32px;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+
+        &:nth-child(2) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        }
+    }
+    
+`;
+
+export const ProjectPageCardNumber = styled.p`
+    font-family: 'SuisseInti-Book';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 68px;
+    line-height: 79px;
+    text-align: center;
+    color: #FF9900;
+    margin: 0 auto;
+    @media screen and (max-width: 510px) {
+        font-size: 48px;
+        line-height: 56px;
+    }
+`;
+
+export const ProjectPageCardTitle = styled.p`
+    font-family: 'SuisseInti-Book';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+    margin: 16px auto 28px auto;
+
+    @media screen and (max-width: 510px) {
+        font-size: 24px;
+        line-height: 28px;
+    }
+`;
+
+
+export const ProjectPageCardText = styled.p`
+    font-family: 'SuisseInti-Book';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #000000;
+    margin: 0 auto;
+
+    @media screen and (max-width: 510px) {
+        font-size: 16px;
+        line-height: 20px;
+    }
+`;
+
+
+// PROJECTS INTRO
 
 export const ProjectsIntroWrapper = styled.div`
     max-width: 1280px;
@@ -36,7 +270,7 @@ export const ProjectsIntroWrapper = styled.div`
     }
 `;
 
-export const TextWrapper = styled.div`
+export const TextIntroWrapper = styled.div`
     max-width: 620px;
     display: flex;
     flex-direction: column;
@@ -117,60 +351,10 @@ export const ImageProjectIntro = styled.img`
     
 `;
 
-export const ProjectsLinkWrapper = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin: 0 0 80px 0;
-    position: relative;
-    max-width: 1280px;
-    align-self: center;
-
-    @media screen and (max-width: 960px) {
-        flex-direction: column;
-        margin: 0 0 40px 0;
-    }
-`;
-
-export const ProjectButton = styled(GlobalButton)`
-    align-self: center;
-    width: 400px;
-    &:nth-child(2) {
-        margin: 0 40px;
-    }
-
-    @media screen and (max-width: 1280px) {
-        width: 288px;
-    }
-
-    @media screen and (max-width: 960px) {
-        width: 400px;
-        margin: 20px 0;
-        &:nth-child(2) {
-        margin: 0;
-    }
-    }
-
-    @media screen and (max-width: 400px) {
-        max-width: 288px;
-    }
-    
-`;
-
-
-
-
 
 
 
 // PROJECT CARDS
-
-
-
-
-
-
 
 
 
@@ -226,6 +410,7 @@ export const ProjectCard = styled(GlobalCard).attrs({ className: "projectCard" }
     @media screen and (max-width: 730px) {
         width: 300px;
         height: 498px;
+        margin-bottom: 0;
     }
 `;
 
@@ -756,33 +941,6 @@ export const StudentsRev = styled.p`
     } 
 `;
 
-export const ProjectsBottomLinksWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    
-    @media screen and (max-width: 730px) {
-        flex-direction: column;
-        margin: 10px auto;
-    }
-`;
-
-export const ProjectButtonBottom = styled(GlobalButton).attrs({ className: "projectButtonBottom" })`
-    width: 293px;
-
-    @media screen and (max-width: 730px) {
-        margin: 10px auto;
-    }
-    @media screen and (max-width: 400px) {
-        margin: 10px auto;
-        
-        
-    }
-`;
-
 
 // KEYFRAMES
 
@@ -834,5 +992,3 @@ export const Lines = styled.line.attrs({ className: "placeHolderLines" })`
     width: 200px;
 }
 `;
-
-
