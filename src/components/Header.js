@@ -95,7 +95,7 @@ const HeaderButton = styled.button`
 
 const Header = () => {
   return (
-    <Wrapper id='top'>
+    <Wrapper>
       <HeaderContainer>
         <TextContainer>
           <Title>Your task. Done by data and web development students. <TitleContrast>For free!</TitleContrast></Title>

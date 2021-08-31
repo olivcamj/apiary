@@ -68,7 +68,7 @@ const Projects = () => {
     }
 
     return (
-        <WrapperDiv neutral>
+        <WrapperDiv neutral name="projects">
             <Container>
                 <ProjectsIntroWrapper>
                     <TextWrapper>

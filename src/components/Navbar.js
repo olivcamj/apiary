@@ -44,7 +44,6 @@ const StyledLink = styled(Link)`
   }
 `;
 
-
 const Logo = styled.div`
   margin-top: 5px;
   width: 180px;
@@ -128,6 +127,7 @@ const Button = styled.button`
   line-height: 20px;
   text-align: center;
   color: #f90;
+  transition: all .2s ease-in-out;
 
   :hover {
     background-color: #f90;
@@ -184,7 +184,7 @@ const Navbar = () => {
   }
 
   return (
-    <Container role="navigation" aria-label="main navigation">
+    <Container role="navigation" aria-label="main navigation" id="navbar">
       <StyledLink to="/">
         <Logo role="button" aria-label="home" /> 
       </StyledLink>

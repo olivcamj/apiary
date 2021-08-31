@@ -14,7 +14,6 @@ export const Container = styled.div`
   box-sizing: border-box;  
 `;
 
-
 export const RequestsTitle = styled.h2`
   font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
   font-style: normal;

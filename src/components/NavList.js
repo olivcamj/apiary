@@ -103,7 +103,7 @@ const NavList = ({ location }) => {
         </StyledLink>
       </ListItem>
       <ListItem>
-        <StyledLink to="start" smooth={true}>
+        <StyledLink to="timeline" smooth={true}>
           How to Start
         </StyledLink>
       </ListItem>

@@ -27,7 +27,6 @@ function App() {
           <Requests />
           <Bubble />
           <Timeline />
-          {/* <Start /> */}
           <About />
           <Projects />
         </Route>

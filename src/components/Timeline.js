@@ -180,7 +180,7 @@ const Button = styled.button`
 
 const Timeline = () => {
   return (
-    <Wrapper>
+    <Wrapper name="timeline">
       <Title>How to start?</Title>
       <TimelineWrapper>
         <CardsLeft>
