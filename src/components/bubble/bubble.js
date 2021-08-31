@@ -1,5 +1,5 @@
 import { Wrapper } from '../Wrapper';
-import Bounce from 'react-reveal/Bounce';
+import Fade from 'react-reveal/Fade';
 import { Container, BubbleTitle, ChatWrapper, LeftTextWrapper, IconWrapper, IconImage, OrangeCard, RightTextWrapper, WhiteCard, DelegateTaskButtonWrapper, DelegateButton } from './bubble.styles';
 
 import chatIcon from '../../images/ChatIcon.png';
@@ -41,20 +41,20 @@ const Bubble = () => {
                     {conversation.map((element, i) => {
                         return (
                             element.chatLeft ?
-                                <Bounce left duration={2500}>
+                                <Fade duration={3000}>
                                     <LeftTextWrapper key={i}>
                                         <IconWrapper>
                                             <IconImage src={chatIcon} />
                                         </IconWrapper>
                                         <OrangeCard chatText={conversation[i].chatText}></OrangeCard>
                                     </LeftTextWrapper>
-                                </Bounce>
+                                </Fade>
                                 :
-                                <Bounce right duration={2500}>
+                                <Fade duration={3000}>
                                     <RightTextWrapper key={i}>
                                         <WhiteCard chatText={conversation[i].chatText}></WhiteCard>
                                     </RightTextWrapper>
-                                </Bounce>
+                                </Fade>
                                 
                         )
                     })}
