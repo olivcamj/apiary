@@ -19,7 +19,7 @@ const Requests = () => {
                         <RequestsCard
                             requestsImage={image1}
                             requestsTitle={'Web development'}
-                            requestsHash={'#programing'}
+                            requestsHash={'#programming'}
                         >
                         </RequestsCard>
                     </LinkToProject>

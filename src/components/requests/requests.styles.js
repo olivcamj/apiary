@@ -11,11 +11,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    box-sizing: border-box;
-
-    @media screen and (max-width: 400px) {
-        
-    }
+    box-sizing: border-box;    
 `;
 
 
@@ -42,7 +38,6 @@ export const RequestsTitle = styled.h2`
         font-size: 32px;
         line-height: 37px;
     }
-
 `;
 
 export const RequestsIntro = styled.p`
@@ -82,8 +77,6 @@ export const CardWrapper = styled.div`
     justify-content: center;
     align-content: center;
 
-
-
     @media screen and (max-width: 400px) {
         flex-direction: column;
         row-gap: 32px;
@@ -97,7 +90,6 @@ export const LinkToProject = styled(Link).attrs({className: "links"})`
         margin-left: 40px;
         margin-right: 40px;
     }
-
 `;
 
 export const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"})`
@@ -106,9 +98,12 @@ export const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"}
     max-width: 400px;
     height: 400px;
     background: transparent;
+    transition: all 0.3s;
 
     &:hover {
         cursor: pointer;
+        transform: scale(1.05);
+        box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
     }
 
     &:nth-child(2) {
@@ -126,10 +121,7 @@ export const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"}
         margin-top: 32px;
         margin-bottom: 32px;
         }
-
-        
     }
-    
 `;
 
 
