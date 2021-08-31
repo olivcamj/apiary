@@ -98,6 +98,12 @@ export const LinkToProject = styled(Link).attrs({className: "links"})`
         margin-right: 40px;
     }
 
+    @media screen and (max-width: 420px){
+        &:nth-child(2) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    }
 `;
 
 export const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"})`
