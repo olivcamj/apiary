@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   WrapperDiv,
   Container,
@@ -13,22 +13,45 @@ import {
   ImageProjectIntro,
   ProjectButtonBottom,
 } from './projects.style';
-import ProjectCardGroup from './ProjectCardGroup';
+import ProjectList from './ProjectList';
 import LoadingProjectCards from './LoadingProjectCards';
 
 import { client } from '../../helper/client';
+import { LIMIT } from '../../utils/configData.json';
 
 import imageIntro from '../../images/projects-intro.png';
 
 const Projects = () => {
-	const [isLoaded, setIsLoaded] = React.useState(false);
-	const [contentfulId, setContentfulId] = React.useState('');
-	const [projectData, setProjectData] = React.useState({});
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [contentfulId, setContentfulId] = useState('');
+	const [projectData, setProjectData] = useState({});
 
-	const contentfullData = (id) => {
+	const [projectsToShow, setProjectsToShow] = useState([]);
+	const projectsPerPage = LIMIT;
+	let arrayForHoldingProjects = [];
+	const ref = useRef(projectsPerPage);
+
+	const loopWithSlice = (start, end) => {
+		console.log(projectData);
+		const slicedProjects = projectData.slice(start, end);
+		arrayForHoldingProjects = arrayForHoldingProjects.concat(slicedProjects);
+		setProjectsToShow(arrayForHoldingProjects);
+	}
+
+	useEffect(() => {
+		loopWithSlice(0, projectsPerPage)
+	}, [contentfulData]);
+
+	const handleShowMoreProjects = () => {
+		loopWithSlice(ref.current, ref.current + projectsPerPage);
+		ref.current += projectsPerPage;
+	}
+
+	const contentfulData = (id) => {
 		client(id)
       .then(res => {
         setProjectData(res.items);
+				// loopWithSlice(0, projectsPerPage);
         setIsLoaded(true);
       })
 	}
@@ -36,14 +59,12 @@ const Projects = () => {
 	const handleId = (projectId) => {
 		const thisIsId = projectId;
 		setContentfulId(thisIsId);
-		contentfullData(thisIsId);
+		contentfulData(thisIsId);
 	}
 
-	React.useEffect(() => {
-		contentfullData(contentfulId)
+	useEffect(() => {
+		contentfulData(contentfulId);
 	}, []);
-
-	const projectContent = projectData;
 
 	return (
 		<WrapperDiv neutral>
@@ -65,17 +86,13 @@ const Projects = () => {
 
 				{isLoaded
 					?
-					projectContent.map((element, i) => {
-						return (
-              <ProjectCardGroup key={i} element={element}/>
-						)
-					})
+					<ProjectList projectsToRender={projectsToShow} />
 					:
 					<LoadingProjectCards />
 				}
 
 				<ProjectsBottomLinksWrapper>
-					<ProjectButtonBottom marginb href={"/"} target={"_blank"}>More projects...</ProjectButtonBottom>
+					<ProjectButtonBottom marginb onClick={handleShowMoreProjects}>More projects...</ProjectButtonBottom>
 					<ProjectButtonBottom marginb orange href={"/"} target={"_blank"}>Delegate a task</ProjectButtonBottom>
 				</ProjectsBottomLinksWrapper>
 
