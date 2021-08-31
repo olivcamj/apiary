@@ -7,44 +7,42 @@ import image3 from '../../images/data-science.png';
 
 const Requests = () => {
 
-    return (
-        <Wrapper>
-            <Container name="requests">
+  return (
+    <Wrapper>
+      <Container name="requests">
 
-                <RequestsTitle>What requests can we help with?</RequestsTitle>
-                <RequestsIntro>We carry out important, non-urgent tasks, with results that you can use in your work.</RequestsIntro>
+        <RequestsTitle>What requests can we help with?</RequestsTitle>
+        <RequestsIntro>We carry out important, non-urgent tasks, with results that you can use in your work.</RequestsIntro>
 
-                <CardWrapper>
-                    <LinkToProject to="/webdev">
-                        <RequestsCard
-                            requestsImage={image1}
-                            requestsTitle={'Web development'}
-                            requestsHash={'#programming'}
-                        >
-                        </RequestsCard>
-                    </LinkToProject>
+        <CardWrapper>
+          <LinkToProject to="/webdev">
+            <RequestsCard
+              requestsImage={image1}
+              requestsTitle={'Web development'}
+              requestsHash={'#programming'}
+            />
+          </LinkToProject>
 
-                    <LinkToProject to="/dataanalysis">
-                        <RequestsCard
-                            requestsImage={image2}
-                            requestsTitle={'Data analysis'}
-                            requestsHash={'#analysis'}
-                        >
-                        </RequestsCard>
-                    </LinkToProject>
-                    <LinkToProject to="/datascience">
-                        <RequestsCard
-                            requestsImage={image3}
-                            requestsTitle={'Data science'}
-                            requestsHash={'#science'}
-                        >
-                        </RequestsCard>
-                    </LinkToProject>
-                </CardWrapper>
+          <LinkToProject to="/dataanalysis">
+            <RequestsCard
+              requestsImage={image2}
+              requestsTitle={'Data analysis'}
+              requestsHash={'#analysis'}
+            />
+          </LinkToProject>
 
-            </Container>
-        </Wrapper>
-    )
+          <LinkToProject to="/datascience">
+            <RequestsCard
+              requestsImage={image3}
+              requestsTitle={'Data science'}
+              requestsHash={'#science'}
+            />
+          </LinkToProject>
+        </CardWrapper>
+
+      </Container>
+    </Wrapper>
+  )
 }
 
 export default Requests;
