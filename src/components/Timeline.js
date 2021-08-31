@@ -79,6 +79,7 @@ const CardsRight = styled.div`
 
   @media screen and (max-width: 1023px) {
     display: none;
+  }
 `;
 
 const Card = styled.div`

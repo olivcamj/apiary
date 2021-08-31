@@ -32,7 +32,7 @@ const Requests = () => {
                         >
                         </RequestsCard>
                     </LinkToProject>
-                    <LinkToProject to="/datascience">
+                    <LinkToProject to="/dataScience">
                         <RequestsCard
                             requestsImage={image3}
                             requestsTitle={'Data science'}

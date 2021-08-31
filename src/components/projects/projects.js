@@ -182,8 +182,6 @@ const Projects = () => {
                             </StudentsCard>
                         </BottomCards>
                     </ProjectCardWrapper>
-
-
                 }
 
                 <ProjectsBottomLinksWrapper>

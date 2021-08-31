@@ -1,5 +1,6 @@
 import styled, { keyframes, css } from "styled-components";
 import { GlobalCard } from '../global-components/global-card/globalCard';
+import { GlobalButton } from '../global-components/global-components';
 
 
 export const IntroWrapper = styled.div`
@@ -151,6 +152,7 @@ export const CardWrapper = styled.div`
     justify-content: center;
     align-content: center;
     margin: 100px auto;
+    row-gap: 40px;
 
     @media screen and (max-width: 400px) {
         flex-direction: column;
@@ -940,6 +942,36 @@ export const StudentsRev = styled.p`
         line-height: 20px;
     } 
 `;
+
+// BOTTOM BUTTONS
+
+export const ProjectsBottomLinksWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    
+    @media screen and (max-width: 730px) {
+        flex-direction: column;
+        margin: 10px auto;
+    }
+`;
+
+export const ProjectButtonBottom = styled(GlobalButton).attrs({ className: "projectButtonBottom" })`
+    width: 293px;
+
+    @media screen and (max-width: 730px) {
+        margin: 10px auto;
+    }
+    @media screen and (max-width: 400px) {
+        margin: 10px auto;
+        
+        
+    }
+`;
+
 
 
 // KEYFRAMES
