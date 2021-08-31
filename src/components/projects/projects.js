@@ -32,7 +32,6 @@ const Projects = () => {
 	const ref = useRef(projectsPerPage);
 
 	const loopWithSlice = (start, end) => {
-		console.log(projectData);
 		const slicedProjects = projectData.slice(start, end);
 		arrayForHoldingProjects = arrayForHoldingProjects.concat(slicedProjects);
 		setProjectsToShow(arrayForHoldingProjects);
@@ -40,7 +39,7 @@ const Projects = () => {
 
 	useEffect(() => {
 		loopWithSlice(0, projectsPerPage)
-	}, [contentfulData]);
+	}, []);
 
 	const handleShowMoreProjects = () => {
 		loopWithSlice(ref.current, ref.current + projectsPerPage);

@@ -4,7 +4,9 @@ const ProjectList = ({ projectsToRender }) => {
   return (
     <ul>
       {projectsToRender.map((project, index) => (
-        <ProjectCardGroup key={index} element={project}/>
+        <li>
+          <ProjectCardGroup key={index} element={project}/>
+        </li>
       ))}
     </ul>
   )
