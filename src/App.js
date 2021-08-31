@@ -20,8 +20,9 @@ function App() {
   return (
     <div className="app">
       <Switch>
+        <Navbar/>
+
         <Route path="/" exact>
-          <Navbar />
           <Header />
           <Useful />
           <Requests />
@@ -35,7 +36,6 @@ function App() {
         <Route path="/webdev" component={WebDevPage} exact />
         <Route path="/dataanalysis" component={DataAnalysisPage} exact />
         <Route path="/datascience" component={DataSciencePage} exact />
-
       </Switch>
       <Footer />
     </div>
