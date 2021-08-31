@@ -149,5 +149,6 @@ export const DelegateTaskButtonWrapper = styled.div`
 `;
 
 export const DelegateButton = styled(GlobalButton)`
-    width: 293px;
+    max-width: 293px;
+    width: 100%;
 `;

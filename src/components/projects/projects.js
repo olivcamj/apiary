@@ -1,7 +1,6 @@
 import React from 'react';
 import { WrapperDiv, Container, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectsLinkWrapper, ProjectCardWrapper, ProjectsBottomLinksWrapper, ProjectButton, ProjectsIntroWrapper, TextWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro, ProjectButtonBottom, ProjectCover, ProjectInfoWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, ReviewLink, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, HeaderStudentWrapper, Lines, LinesWrapper } from './projects.style';
 
-// import BounceLoader from "react-spinners/ClipLoader";
 import { client } from '../../helper/client';
 
 import imageIntro from '../../images/projects-intro.png';
@@ -36,6 +35,29 @@ const Projects = () => {
     //     setIsLoaded(true)
     // }, 2000);
 
+    const [button1Bg, setButton1Bg] = React.useState({background: "#FF9900", color: "#FFFFFF"});
+    const [button2Bg, setButton2Bg] = React.useState({background: "#FFFFFF", color: "#FF9900"});
+    const [button3Bg, setButton3Bg] = React.useState({background: "#FFFFFF", color: "#FF9900"});
+
+    function handleButton1 () {
+        handleId('projects');
+        setButton1Bg({background: "#FF9900", color: "#FFFFFF"});
+        setButton2Bg({background: "#FFFFFF", color: "#FF9900"});
+        setButton3Bg({background: "#FFFFFF", color: "#FF9900"});
+    }
+    function handleButton2 () {
+        handleId('dataAnalysisProjects');
+        setButton1Bg({background: "#FFFFFF", color: "#FF9900"});
+        setButton2Bg({background: "#FF9900", color: "#FFFFFF"});
+        setButton3Bg({background: "#FFFFFF", color: "#FF9900"});
+    }
+    function handleButton3 () {
+        handleId('dataScienceProjects');
+        setButton1Bg({background: "#FFFFFF", color: "#FF9900"});
+        setButton2Bg({background: "#FFFFFF", color: "#FF9900"});
+        setButton3Bg({background: "#FF9900", color: "#FFFFFF"});
+    }
+
     return (
         <WrapperDiv neutral>
             <Container>
@@ -50,9 +72,9 @@ const Projects = () => {
 
                 </ProjectsIntroWrapper>
                 <ProjectsLinkWrapper>
-                    <ProjectButton onClick={() => handleId('projects')} projects >Web development</ProjectButton>
-                    <ProjectButton onClick={() => handleId('dataAnalysisProjects')} projects >Data analysis</ProjectButton>
-                    <ProjectButton projects >Data science</ProjectButton>
+                    <ProjectButton onClick={() => handleButton1()} projects style={button1Bg}>Web development</ProjectButton>
+                    <ProjectButton onClick={() => handleButton2()} projects style={button2Bg}>Data analysis</ProjectButton>
+                    <ProjectButton onClick={() => handleButton3()} projects style={button3Bg}>Data science</ProjectButton>
                 </ProjectsLinkWrapper>
 
                 {isLoaded
@@ -156,8 +178,8 @@ const Projects = () => {
                 }
 
                 <ProjectsBottomLinksWrapper>
-                    <ProjectButtonBottom marginb href={"/"} target={"_blank"}>More projects...</ProjectButtonBottom>
-                    <ProjectButtonBottom marginb orange href={"/"} target={"_blank"}>Delegate a task</ProjectButtonBottom>
+                    <ProjectButtonBottom marginb href={"/"}>More projects...</ProjectButtonBottom>
+                    <ProjectButtonBottom marginb orange href={"/"}>Delegate a task</ProjectButtonBottom>
                 </ProjectsBottomLinksWrapper>
 
             </Container>
