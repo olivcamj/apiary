@@ -38,6 +38,7 @@ const ListItem = styled.li`
   color: #616161;
   text-decoration: none;
   text-align: center;
+  transition: all .2s ease-in-out;
 
   &:hover {
     color: #000;
