@@ -39,20 +39,29 @@ const Projects = () => {
     const [button2Bg, setButton2Bg] = React.useState({background: "#FFFFFF", color: "#FF9900"});
     const [button3Bg, setButton3Bg] = React.useState({background: "#FFFFFF", color: "#FF9900"});
 
+    const [indexShow, setIndexShow] = React.useState(2);
+
+    function handleLoadMore () {
+        setIndexShow(indexShow + 2);
+    }
+
     function handleButton1 () {
         handleId('projects');
+        setIndexShow(2);
         setButton1Bg({background: "#FF9900", color: "#FFFFFF"});
         setButton2Bg({background: "#FFFFFF", color: "#FF9900"});
         setButton3Bg({background: "#FFFFFF", color: "#FF9900"});
     }
     function handleButton2 () {
         handleId('dataAnalysisProjects');
+        setIndexShow(2);
         setButton1Bg({background: "#FFFFFF", color: "#FF9900"});
         setButton2Bg({background: "#FF9900", color: "#FFFFFF"});
         setButton3Bg({background: "#FFFFFF", color: "#FF9900"});
     }
     function handleButton3 () {
         handleId('dataScienceProjects');
+        setIndexShow(2);
         setButton1Bg({background: "#FFFFFF", color: "#FF9900"});
         setButton2Bg({background: "#FFFFFF", color: "#FF9900"});
         setButton3Bg({background: "#FF9900", color: "#FFFFFF"});
@@ -79,7 +88,7 @@ const Projects = () => {
 
                 {isLoaded
                     ?
-                    projectContent.map((element, i) => {
+                    projectContent.filter((element, idx) => idx < indexShow).map((element, i) => {
                         return (
 
                             <ProjectCardWrapper key={i}>
@@ -178,7 +187,7 @@ const Projects = () => {
                 }
 
                 <ProjectsBottomLinksWrapper>
-                    <ProjectButtonBottom marginb href={"/"}>More projects...</ProjectButtonBottom>
+                    <ProjectButtonBottom marginb onClick={() => handleLoadMore()}>More projects...</ProjectButtonBottom>
                     <ProjectButtonBottom marginb orange href={"/"}>Delegate a task</ProjectButtonBottom>
                 </ProjectsBottomLinksWrapper>
 
