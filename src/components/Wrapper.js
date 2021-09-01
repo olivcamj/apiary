@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -14,15 +14,15 @@ export const Wrapper = styled.section`
   ${({ dark }) =>
     dark &&
     css`
-      background-color: #1A1B22;
+      background-color: #1a1b22;
       color: #fff;
-  `}
+    `}
   ${({ neutral }) =>
     neutral &&
     css`
       background-color: #e5e5e5;
       color: #000;
-  `}
+    `}
 
   @media (min-width: 601px) and (max-width: 1024px) {
     padding: 100px 40px;
@@ -35,7 +35,4 @@ export const Wrapper = styled.section`
   @media screen and (max-width: 335px) {
     padding: 60px 10px;
   }
-
-
-
 `;

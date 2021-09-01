@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { GlobalCard } from './global-components/global-card/globalCard';
-import Fade from 'react-reveal/Fade';
+import styled from "styled-components";
+import { GlobalCard } from "./global-components/global-card/globalCard";
+import Fade from "react-reveal/Fade";
 
 const LeftTextWrapper = styled.div`
   position: relative;
@@ -30,10 +30,10 @@ const IconImage = styled.img`
   bottom: -25px;
 `;
 
-const OrangeCard = styled(GlobalCard).attrs({className: 'OrangeCard'})`
+const OrangeCard = styled(GlobalCard).attrs({ className: "OrangeCard" })`
   margin-left: 40px;
   border-bottom-left-radius: 0;
-  background-color: #FF9900;
+  background-color: #ff9900;
   max-width: 840px;
 
   @media screen and (max-width: 1024px) {
@@ -44,13 +44,12 @@ const OrangeCard = styled(GlobalCard).attrs({className: 'OrangeCard'})`
   }
 
   @media screen and (max-width: 320px) {
-    
   }
 
   @media screen and (max-width: 700px) {
     margin-left: 0;
   }
-`;  
+`;
 
 const RightTextWrapper = styled.div`
   position: relative;
@@ -63,8 +62,8 @@ const RightTextWrapper = styled.div`
   width: auto;
 `;
 
-const WhiteCard = styled(GlobalCard).attrs({className: 'WhiteCard'})`
-  max-width: 554px; 
+const WhiteCard = styled(GlobalCard).attrs({ className: "WhiteCard" })`
+  max-width: 554px;
   border-bottom-right-radius: 0;
   background-color: #fff;
   color: #000;
@@ -84,8 +83,8 @@ export const LeftChatBubble = ({ key, src, chatText }) => {
         <OrangeCard chatText={chatText}></OrangeCard>
       </LeftTextWrapper>
     </Fade>
-  )
-}
+  );
+};
 
 export const RightChatBubble = ({ key, chatText }) => {
   return (
@@ -94,5 +93,5 @@ export const RightChatBubble = ({ key, chatText }) => {
         <WhiteCard chatText={chatText}></WhiteCard>
       </RightTextWrapper>
     </Fade>
-  )
-}
+  );
+};

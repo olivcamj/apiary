@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Wrapper } from './Wrapper';
-import HeaderImg from '../images/header.png';
+import styled from "styled-components";
+import { Wrapper } from "./Wrapper";
+import HeaderImg from "../images/header.png";
 
 const HeaderContainer = styled.div`
   position: relative;
@@ -45,7 +45,7 @@ const Title = styled.h1`
 `;
 
 const TitleContrast = styled.span`
-  color: #FF9900;
+  color: #ff9900;
 `;
 
 const Image = styled.img`
@@ -81,7 +81,7 @@ const HeaderButton = styled.button`
   color: white;
   font-size: 24px;
   line-height: 32px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   overflow: visible;
   &:hover {
@@ -98,13 +98,16 @@ const Header = () => {
     <Wrapper>
       <HeaderContainer>
         <TextContainer>
-          <Title>Your task. Done by data and web development students. <TitleContrast>For free!</TitleContrast></Title>
+          <Title>
+            Your task. Done by data and web development students.{" "}
+            <TitleContrast>For free!</TitleContrast>
+          </Title>
           <Image src={HeaderImg}></Image>
           <HeaderButton orange>Delegate a task</HeaderButton>
         </TextContainer>
       </HeaderContainer>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default Header;

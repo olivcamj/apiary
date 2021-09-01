@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import Fade from 'react-reveal/Fade';
+import styled from "styled-components";
+import Fade from "react-reveal/Fade";
 
 const Card = styled.div`
-  display: ${props => props.hide ? "none" : "flex"};
+  display: ${(props) => (props.hide ? "none" : "flex")};
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -60,7 +60,7 @@ const TimelineCard = ({ image, number, title, text, hide }) => {
         <CardText>{text}</CardText>
       </Card>
     </Fade>
-  )
-}
+  );
+};
 
 export default TimelineCard;

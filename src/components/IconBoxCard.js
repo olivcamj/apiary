@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import { GlobalCard } from './global-components/global-card/globalCard';
+import { GlobalCard } from "./global-components/global-card/globalCard";
 
-export const IconBoxCard = styled(GlobalCard).attrs({ className: "iconBoxCard" })`
+export const IconBoxCard = styled(GlobalCard).attrs({
+  className: "iconBoxCard",
+})`
   border: none;
   border-radius: 0;
   max-width: 400px;
@@ -16,10 +18,10 @@ export const IconBoxCard = styled(GlobalCard).attrs({ className: "iconBoxCard" }
     width: 300px;
     margin: 0 auto;
     &:nth-child(2) {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 32px;
-    margin-bottom: 32px;
-    } 
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
   }
 `;

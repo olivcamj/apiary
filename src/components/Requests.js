@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { GlobalCard } from './global-components/global-card/globalCard';
-import { Wrapper } from './Wrapper';
-import { Link } from 'react-router-dom';
-import CardBlock from './CardBlock'
-import image1 from '../images/web-dev.png';
-import image2 from '../images/data-analysis.png';
-import image3 from '../images/data-science.png';
+import { GlobalCard } from "./global-components/global-card/globalCard";
+import { Wrapper } from "./Wrapper";
+import { Link } from "react-router-dom";
+import CardBlock from "./CardBlock";
+import image1 from "../images/web-dev.png";
+import image2 from "../images/data-analysis.png";
+import image3 from "../images/data-science.png";
 
 const CardWrapper = styled.div`
   overflow: visible;
@@ -19,21 +19,21 @@ const CardWrapper = styled.div`
   align-content: center;
 
   @media screen and (max-width: 400px) {
-  flex-direction: column;
-  row-gap: 32px;
+    flex-direction: column;
+    row-gap: 32px;
   }
 `;
 
-const LinkToProject = styled(Link).attrs({className: "links"})`
+const LinkToProject = styled(Link).attrs({ className: "links" })`
   width: auto;
   text-decoration: none;
   &:nth-child(2) {
-  margin-left: 40px;
-  margin-right: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 `;
 
-const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"})`
+const RequestsCard = styled(GlobalCard).attrs({ className: "RequestsCard" })`
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   max-width: 400px;
@@ -66,44 +66,45 @@ const RequestsCard = styled(GlobalCard).attrs({className: "RequestsCard"})`
   }
 `;
 
-const requestsCards = 
+const requestsCards = (
   <CardWrapper>
     <LinkToProject to="/webdev">
       <RequestsCard
         requestsImage={image1}
-        requestsTitle={'Web development'}
-        requestsHash={'#programming'}
+        requestsTitle={"Web development"}
+        requestsHash={"#programming"}
       />
     </LinkToProject>
 
     <LinkToProject to="/dataanalysis">
       <RequestsCard
         requestsImage={image2}
-        requestsTitle={'Data analysis'}
-        requestsHash={'#analysis'}
+        requestsTitle={"Data analysis"}
+        requestsHash={"#analysis"}
       />
     </LinkToProject>
 
     <LinkToProject to="/datascience">
       <RequestsCard
         requestsImage={image3}
-        requestsTitle={'Data science'}
-        requestsHash={'#science'}
+        requestsTitle={"Data science"}
+        requestsHash={"#science"}
       />
     </LinkToProject>
   </CardWrapper>
+);
 
 const Requests = () => {
   return (
-  <Wrapper>
-    <CardBlock
-      name='requests'
-      title='What requests can we help with?'
-      intro='By handing over assignments to students for work, you free experienced employees from routine tasks, as well as increase brand awareness.'
-      cards={requestsCards}
-    />
-  </Wrapper>
-  )
-}
+    <Wrapper>
+      <CardBlock
+        name="requests"
+        title="What requests can we help with?"
+        intro="By handing over assignments to students for work, you free experienced employees from routine tasks, as well as increase brand awareness."
+        cards={requestsCards}
+      />
+    </Wrapper>
+  );
+};
 
 export default Requests;

@@ -1,14 +1,14 @@
-import styled from 'styled-components';
-import { GlobalButton } from './global-components/global-components';
-import { Wrapper } from './Wrapper';
-import { LeftChatBubble, RightChatBubble } from './ChatBubble';
-import chatIcon from '../images/ChatIcon.png';
+import styled from "styled-components";
+import { GlobalButton } from "./global-components/global-components";
+import { Wrapper } from "./Wrapper";
+import { LeftChatBubble, RightChatBubble } from "./ChatBubble";
+import chatIcon from "../images/ChatIcon.png";
 
 const Container = styled.div`
   width: 100%;
   max-width: 1280px;
   padding: 0;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
@@ -21,7 +21,7 @@ const Container = styled.div`
 
 const Title = styled.h2`
   margin: 0 auto 80px auto;
-  font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
+  font-family: "SuisseInti-Book", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 48px;
@@ -84,29 +84,32 @@ const DelegateButton = styled(GlobalButton)`
 const conversation = [
   {
     chatLeft: true,
-    chatText: "Practicum by Yandex is a kind of boot camp. Our goal is to help ambitious and passionate people to master it and find their first job. At the same time, the level of our training allows graduates to carry out high-quality real projects of companies under the review of experienced mentors."
+    chatText:
+      "Practicum by Yandex is a kind of boot camp. Our goal is to help ambitious and passionate people to master it and find their first job. At the same time, the level of our training allows graduates to carry out high-quality real projects of companies under the review of experienced mentors.",
   },
   {
     chatLeft: false,
-    chatText: "Who will solve the problems? How much does it cost?"
+    chatText: "Who will solve the problems? How much does it cost?",
   },
   {
     chatLeft: true,
-    chatText: "It is a win-win situation: we take real tasks from real companies and give them to graduates of Data Science and Data Analytics courses. The results of these tasks will be repeatedly checked by curators and returned to the customer as ordered for free."
+    chatText:
+      "It is a win-win situation: we take real tasks from real companies and give them to graduates of Data Science and Data Analytics courses. The results of these tasks will be repeatedly checked by curators and returned to the customer as ordered for free.",
   },
   {
     chatLeft: false,
-    chatText: "Why is it free?"
+    chatText: "Why is it free?",
   },
   {
     chatLeft: true,
-    chatText: "Because Practicum has students who are eager to gain real life experience, find them interesting and useful, and are ready to take on your tasks"
+    chatText:
+      "Because Practicum has students who are eager to gain real life experience, find them interesting and useful, and are ready to take on your tasks",
   },
   {
     chatLeft: false,
-    chatText: "Wow! I'm ready to start!"
-  }
-]
+    chatText: "Wow! I'm ready to start!",
+  },
+];
 
 const About = () => {
   return (
@@ -115,29 +118,24 @@ const About = () => {
         <Title>What is Practicum by Yandex?</Title>
         <ChatWrapper>
           {conversation.map((element, i) => {
-            return (
-              element.chatLeft ?
-                <LeftChatBubble 
-                  key={i}
-                  src={chatIcon}
-                  chatText={conversation[i].chatText}
-                />
-              :
-                <RightChatBubble
-                  key={i}
-                  chatText={conversation[i].chatText}
-                />
-            )
+            return element.chatLeft ? (
+              <LeftChatBubble
+                key={i}
+                src={chatIcon}
+                chatText={conversation[i].chatText}
+              />
+            ) : (
+              <RightChatBubble key={i} chatText={conversation[i].chatText} />
+            );
           })}
         </ChatWrapper>
 
         <DelegateTaskButtonWrapper>
           <DelegateButton orange>Delegate a task</DelegateButton>
         </DelegateTaskButtonWrapper>
-
-      </Container >
+      </Container>
     </Wrapper>
-  )
-}
+  );
+};
 
 export default About;
