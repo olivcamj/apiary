@@ -4,10 +4,10 @@ import { Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Useful from './components/Useful';
-import Bubble from './components/bubble/bubble';
-import Requests from './components/requests';
-import Projects from './components/projects/projects';
 import About from './components/About';
+import Requests from './components/Requests';
+import Projects from './components/projects/projects';
+import WhyChoose from './components/WhyChoose';
 import Footer from './components/footer/footer';
 import Timeline from './components/Timeline';
 
@@ -24,9 +24,9 @@ function App() {
           <Header />
           <Useful />
           <Requests />
-          <Bubble />
-          <Timeline />
           <About />
+          <Timeline />
+          <WhyChoose />
           <Projects />
         </Route>
 
