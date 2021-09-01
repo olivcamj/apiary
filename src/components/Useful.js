@@ -1,11 +1,9 @@
-import { IconBoxCard } from '../IconBoxCard';
-import { Wrapper } from '../Wrapper';
-import CardBlock from '../CardBlock';
-
-import image1 from '../../images/resource-saving.png';
-import image2 from '../../images/publicize.png';
-import image3 from '../../images/pr-boost.png';
-
+import { IconBoxCard } from './IconBoxCard';
+import { Wrapper } from './Wrapper';
+import CardBlock from './CardBlock';
+import image1 from '../images/resource-saving.png';
+import image2 from '../images/publicize.png';
+import image3 from '../images/pr-boost.png';
 
 const usefulCards = 
 	<>
@@ -38,6 +36,6 @@ const Useful = () => {
 			/>
 		</Wrapper>
 	)
-}
+};
 
 export default Useful;

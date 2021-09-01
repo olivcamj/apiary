@@ -88,6 +88,6 @@ const CardBlock = ({ title, intro, cards, color }) => {
       </CardWrapper>
     </Container>
   )
-}
+};
 
 export default CardBlock;

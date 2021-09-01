@@ -30,7 +30,7 @@ const TextContainer = styled.div`
     width: auto;
     align-items: center;
   }
-`
+`;
 
 const Title = styled.h1`
   margin: 0;
