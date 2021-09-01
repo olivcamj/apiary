@@ -1,6 +1,10 @@
+import React from "react";
 import styled from "styled-components";
+import { Link } from "react-scroll";
+import { Wrapper } from "./Wrapper.js";
+import HoverComponent from "./hoverComponent/hoverComponent.js";
 
-export const Container = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-self: center;
@@ -23,7 +27,7 @@ export const Container = styled.div`
   }
 `;
 
-export const LeftDiv = styled.div`
+const LeftDiv = styled.div`
   position: relative;
   margin: 0;
   display: flex;
@@ -58,8 +62,10 @@ export const LeftDiv = styled.div`
   }
 `;
 
-export const AboutUs = styled.p`
+const AboutUs = styled(Link)`
   margin: 0 0 20px 0;
+  cursor: pointer;
+  
   @media screen and (max-width: 960px) {
     margin: 0 20px 0 0;
     width: 120px;
@@ -73,7 +79,8 @@ export const AboutUs = styled.p`
     margin-bottom: 60px;
   }
 `;
-export const Email = styled.p`
+
+const Email = styled.p`
   margin: 0;
   @media screen and (max-width: 960px) {
   }
@@ -83,7 +90,7 @@ export const Email = styled.p`
     margin: 0 auto 10px auto;
   }
 `;
-export const Linkedin = styled.a`
+const Linkedin = styled.a`
   color: #dddddd;
   text-decoration: none;
   margin: 0;
@@ -96,7 +103,7 @@ export const Linkedin = styled.a`
     margin: 0 auto 10px auto;
   }
 `;
-export const Tfn = styled.p`
+const Tfn = styled.p`
   margin: 0;
   @media screen and (max-width: 960px) {
     margin: 0 20px 0 0;
@@ -108,7 +115,7 @@ export const Tfn = styled.p`
   }
 `;
 
-export const CenterDiv = styled.div`
+const CenterDiv = styled.div`
   position: relative;
   width: 100%;
   height: auto;
@@ -122,7 +129,7 @@ export const CenterDiv = styled.div`
   }
 `;
 
-export const FooterInfo = styled.div`
+const FooterInfo = styled.div`
   width: 348px;
   height: 92px;
   background: #ffffff;
@@ -133,7 +140,7 @@ export const FooterInfo = styled.div`
   }
 `;
 
-export const Info = styled.p`
+const Info = styled.p`
   width: 284px;
   font-family: "SuisseInti-Book";
   font-style: normal;
@@ -150,7 +157,7 @@ export const Info = styled.p`
   }
 `;
 
-export const RightDiv = styled.div`
+const RightDiv = styled.div`
   position: relative;
   height: auto;
   position: relative;
@@ -177,7 +184,7 @@ export const RightDiv = styled.div`
   }
 `;
 
-export const Top = styled.a`
+const Top = styled.a`
   margin: 0;
   text-align: right;
   display: inline-block;
@@ -192,7 +199,7 @@ export const Top = styled.a`
   }
 `;
 
-export const Text = styled.p`
+const Text = styled.p`
   margin: 0;
   width: 100%;
   text-align: right;
@@ -211,3 +218,43 @@ export const Text = styled.p`
     margin: 20px auto 0 auto;
   }
 `;
+
+const Footer = () => {
+  const [isShown, setIsShown] = React.useState(false);
+
+  return (
+    <Wrapper dark>
+      <Container>
+        <LeftDiv>
+          <AboutUs to="about" smooth={true}>About us</AboutUs>
+          <Email>msgordienko@yandex-team.com</Email>
+          <Linkedin
+            target="_blank"
+            href={"https://www.linkedin.com/school/practicum-by-yandex/"}
+          >
+            LinkedIn
+          </Linkedin>
+          <Tfn>+1-510-646-62-5</Tfn>
+        </LeftDiv>
+
+        <CenterDiv
+          onMouseEnter={() => setIsShown(true)}
+          onMouseLeave={() => setIsShown(false)}
+        >
+          <FooterInfo>
+            <Info>
+              This website is developed by Practicum by Yandex’ students
+            </Info>
+          </FooterInfo>
+        </CenterDiv>
+        {isShown && <HoverComponent />}
+        <RightDiv>
+          <Top href={"#top"}>Back to top ↑</Top>
+          <Text>© 2020 Practicum by Yandex</Text>
+        </RightDiv>
+      </Container>
+    </Wrapper>
+  );
+};
+
+export default Footer;
