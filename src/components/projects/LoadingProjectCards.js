@@ -7,7 +7,7 @@ import {
   BottomCards,
   ClientCard,
   StudentsCard,
-} from "./Projects.style";
+} from "./projects.style";
 
 const LoadingProjectCards = () => {
   return (

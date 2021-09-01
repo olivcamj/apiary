@@ -28,7 +28,7 @@ import {
   StudentsTitle,
   StudentsNames,
   StudentsRev,
-} from "./Projects.style";
+} from "./projects.style";
 
 const ProjectCardGroup = ({ element, i }) => {
   return (

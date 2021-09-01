@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Useful from "./components/Useful";
 import About from "./components/About";
 import Requests from "./components/Requests";
-import Projects from "./components/Projects/Projects";
+import Projects from "./components/Projects/projects";
 import WhyChoose from "./components/WhyChoose";
 import Footer from "./components/Footer";
 import Timeline from "./components/Timeline";

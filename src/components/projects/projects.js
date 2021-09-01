@@ -14,7 +14,7 @@ import {
   ProjectIntroText, 
   ImageProjectIntro, 
   ProjectButtonBottom
-} from './Projects.style';
+} from './projects.style';
 
 import { client } from '../../helper/client';
 
