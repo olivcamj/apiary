@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import TimelineCard from "./TimelineCard";
 import { Wrapper } from "./Wrapper";
-import number1 from "../images/circle1.svg";
-import number2 from "../images/circle2.svg";
-import number3 from "../images/circle3.svg";
 import image1 from "../images/checklist.png";
 import image2 from "../images/clarify.png";
 import image3 from "../images/start-tasks.png";
@@ -111,12 +108,18 @@ const VerticalTimeline = styled.div`
   }
 `;
 
-const TimelineNumber = styled.img`
-  width: 40px;
-  height: 40px;
+const TimelineNumber = styled.p`
+  font-size: 21px;
+  line-height: 42px;
+  text-align: center;
+  width: 43px;
+  height: 43px;
   border: 10px solid #fff;
   margin: 67px 0;
   z-index: 10;
+  border-radius: 50%;
+  background-color: #FF9900;
+  color: #fff;
 `;
 
 const Button = styled.button`
@@ -148,7 +151,7 @@ const Timeline = () => {
         <CardsLeft>
           <TimelineCard
             image={image1}
-            number={number1}
+            number="1"
             title={"Fill in the checklist"}
             text={
               "So that we can understand your request and how we can help you"
@@ -157,7 +160,7 @@ const Timeline = () => {
           <TimelineCard
             hide={true}
             image={image2}
-            number={number2}
+            number="2"
             title={
               "We will clarify the details and connect the necessary experts"
             }
@@ -167,7 +170,7 @@ const Timeline = () => {
           />
           <TimelineCard
             image={image3}
-            number={number3}
+            number="3"
             title={"We will start solving your tasks"}
             text={
               "Practicum by Yandex students will solve the task, then our curators check and correct their solutions. We&apos;ll send you the work. Additionally, if you wish, you may talk to the authors of the best solutions and invite them to join you"
@@ -175,14 +178,14 @@ const Timeline = () => {
           />
         </CardsLeft>
         <VerticalTimeline>
-          <TimelineNumber src={number1} />
-          <TimelineNumber src={number2} />
-          <TimelineNumber src={number3} />
+          <TimelineNumber>1</TimelineNumber>
+          <TimelineNumber>2</TimelineNumber>
+          <TimelineNumber>3</TimelineNumber>
         </VerticalTimeline>
         <CardsRight>
           <TimelineCard
             image={image2}
-            number={number2}
+            number="2"
             title={
               "We will clarify the details and connect the necessary experts"
             }

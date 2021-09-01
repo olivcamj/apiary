@@ -24,9 +24,17 @@ const CardImage = styled.img`
   width: 100%;
 `;
 
-const CardNumber = styled.img`
-  width: 40px;
-  height: 40px;
+const CardNumber = styled.p`
+  font-size: 21px;
+  line-height: 42px;
+  text-align: center;
+  width: 43px;
+  height: 43px;
+  border: 10px solid #fff;
+  z-index: 10;
+  border-radius: 50%;
+  background-color: #FF9900;
+  color: #fff;
   display: none;
 
   @media screen and (max-width: 1023px) {
@@ -35,6 +43,9 @@ const CardNumber = styled.img`
 `;
 
 const CardTitle = styled.h3`
+  font-family: "SuisseInti-Book", "Helvetica", sans-serif;
+  font-style: normal;
+  font-weight: normal;
   font-size: 30px;
   line-height: 40px;
   text-align: center;
@@ -55,7 +66,7 @@ const TimelineCard = ({ image, number, title, text, hide }) => {
     <Fade duration={3000}>
       <Card hide={hide}>
         <CardImage src={image} />
-        <CardNumber src={number} />
+        <CardNumber>{number}</CardNumber>
         <CardTitle>{title}</CardTitle>
         <CardText>{text}</CardText>
       </Card>
