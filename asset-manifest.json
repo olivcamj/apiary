@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/olivcamj/apiary/static/css/main.7e8ee112.chunk.css",
+    "main.js": "/olivcamj/apiary/static/js/main.73005803.chunk.js",
+    "main.js.map": "/olivcamj/apiary/static/js/main.73005803.chunk.js.map",
+    "runtime-main.js": "/olivcamj/apiary/static/js/runtime-main.af564bfd.js",
+    "runtime-main.js.map": "/olivcamj/apiary/static/js/runtime-main.af564bfd.js.map",
+    "static/js/2.603698fe.chunk.js": "/olivcamj/apiary/static/js/2.603698fe.chunk.js",
+    "static/js/2.603698fe.chunk.js.map": "/olivcamj/apiary/static/js/2.603698fe.chunk.js.map",
+    "static/js/3.b5ca5d17.chunk.js": "/olivcamj/apiary/static/js/3.b5ca5d17.chunk.js",
+    "static/js/3.b5ca5d17.chunk.js.map": "/olivcamj/apiary/static/js/3.b5ca5d17.chunk.js.map",
+    "index.html": "/olivcamj/apiary/index.html",
+    "static/css/main.7e8ee112.chunk.css.map": "/olivcamj/apiary/static/css/main.7e8ee112.chunk.css.map",
+    "static/js/2.603698fe.chunk.js.LICENSE.txt": "/olivcamj/apiary/static/js/2.603698fe.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/olivcamj/apiary/static/media/SuisseIntl-Book.455a3985.otf",
+    "static/media/circle1.07ba6249.svg": "/olivcamj/apiary/static/media/circle1.07ba6249.svg",
+    "static/media/circle2.cf616972.svg": "/olivcamj/apiary/static/media/circle2.cf616972.svg",
+    "static/media/circle3.9f40a265.svg": "/olivcamj/apiary/static/media/circle3.9f40a265.svg",
+    "static/media/header.2edd4382.png": "/olivcamj/apiary/static/media/header.2edd4382.png",
+    "static/media/practicum-logo.29786687.svg": "/olivcamj/apiary/static/media/practicum-logo.29786687.svg",
+    "static/media/projects-intro.084508fb.png": "/olivcamj/apiary/static/media/projects-intro.084508fb.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.af564bfd.js",
+    "static/js/2.603698fe.chunk.js",
+    "static/css/main.7e8ee112.chunk.css",
+    "static/js/main.73005803.chunk.js"
+  ]
+}
