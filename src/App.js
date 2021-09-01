@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Useful from './components/Useful';
 import Bubble from './components/bubble/bubble';
-import Requests from './components/requests/requests';
+import Requests from './components/requests';
 import Projects from './components/projects/projects';
 import About from './components/About';
 import Footer from './components/footer/footer';
