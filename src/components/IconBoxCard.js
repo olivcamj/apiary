@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GlobalCard } from "./global-components/global-card/globalCard";
+import { GlobalCard } from "./globalComponents/globalCard/globalCard";
 
 export const IconBoxCard = styled(GlobalCard).attrs({
   className: "iconBoxCard",

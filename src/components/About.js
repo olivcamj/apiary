@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GlobalButton } from "./global-components/global-components";
+import { GlobalButton } from "./globalComponents/globalComponents";
 import { Wrapper } from "./Wrapper";
 import { LeftChatBubble, RightChatBubble } from "./ChatBubble";
 import chatIcon from "../images/ChatIcon.png";

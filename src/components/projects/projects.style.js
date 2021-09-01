@@ -1,6 +1,6 @@
 import styled, { keyframes, css } from "styled-components";
-import { GlobalCard } from "../global-components/global-card/globalCard";
-import { GlobalButton } from "../global-components/global-components";
+import { GlobalCard } from "../globalComponents/globalCard/globalCard";
+import { GlobalButton } from "../globalComponents/globalComponents";
 import { Wrapper } from "../Wrapper";
 
 export const WrapperDiv = styled(Wrapper)`

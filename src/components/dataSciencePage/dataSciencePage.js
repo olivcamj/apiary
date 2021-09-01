@@ -1,6 +1,9 @@
 import React from "react";
 import { Wrapper } from "../Wrapper";
+import LoadingProjectCards from '../Projects/LoadingProjectCards';
 import {
+  ProjectsBottomLinksWrapper, 
+  ProjectButtonBottom, 
   IntroWrapper,
   Title,
   TextIntro,
@@ -36,8 +39,6 @@ import {
   StudentsNames,
   StudentsRev,
   HeaderStudentWrapper,
-  Lines,
-  LinesWrapper,
   CardWrapper,
   ProjectPageCard,
   ProjectPageCardTitle,
@@ -59,6 +60,11 @@ import { client } from "../../helper/client";
 const DataSciencePage = () => {
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [projectData, setProjectData] = React.useState({});
+
+  const [indexShow, setIndexShow] = React.useState(2);
+  function handleLoadMore() {
+      setIndexShow(indexShow + 2);
+  }
 
   const contentfullData = (id) => {
     client(id).then((res) => {
@@ -136,122 +142,71 @@ const DataSciencePage = () => {
             <ImageProjectIntro src={imageIntro} />
           </ImageIntroWrapper>
         </ProjectsIntroWrapper>
+        {isLoaded
+          ?
+            projectContent.filter((element, idx) => idx < indexShow).map((element, i) => {
+              return (
+                <ProjectCardWrapper key={i}>
+                  <ProjectCard>
+                    <CoverCard>
+                      <ProjectCover src={element.fields.coverImg.fields.file.url} />
+                    </CoverCard>
 
-        {isLoaded ? (
-          projectContent.map((element, i) => {
-            return (
-              <ProjectCardWrapper key={i}>
-                <ProjectCard>
-                  <CoverCard>
-                    <ProjectCover
-                      src={element.fields.coverImg.fields.file.url}
-                    />
-                  </CoverCard>
+                    <ProjectInfoWrapper>
+                      <ProjectTitle>{element.fields.title}</ProjectTitle>
+                      <ProjectIntro>{element.fields.intro}</ProjectIntro>
+                      <ProjectDate>{element.fields.createdin}</ProjectDate>
+                      <ProjectLink target="_blank">Visit wbesite →</ProjectLink>
+                    </ProjectInfoWrapper>
 
-                  <ProjectInfoWrapper>
-                    <ProjectTitle>{element.fields.title}</ProjectTitle>
-                    <ProjectIntro>{element.fields.intro}</ProjectIntro>
-                    <ProjectDate>{element.fields.createdin}</ProjectDate>
-                    <ProjectLink
-                      // href={href}
-                      target="_blank"
-                    >
-                      Visit wbesite →
-                    </ProjectLink>
-                  </ProjectInfoWrapper>
-                </ProjectCard>
+                  </ProjectCard>
 
-                <BottomCards>
-                  <ClientCard>
-                    <ClientWrapper>
-                      <HeaderWrapper>
-                        <ClientPicWrapper>
-                          <ClientPic
-                            src={element.fields.clientPic.fields.file.url}
-                          />
-                        </ClientPicWrapper>
-                        <ClientInfoWrapper>
-                          <ClientName>{element.fields.clientName}</ClientName>
-                          <ClientPos>{element.fields.clientPos}</ClientPos>
-                        </ClientInfoWrapper>
-                      </HeaderWrapper>
-                      <ClientRev>{element.fields.clientReview}</ClientRev>
-                      <ReviewLink
-                      // href={reviewLink}
-                      >
-                        Read full review
-                      </ReviewLink>
-                    </ClientWrapper>
-                  </ClientCard>
-                  <StudentsCard>
-                    <StudentsWrapper>
-                      <HeaderStudentWrapper>
-                        <StudentsPicsWrapper>
-                          <StudentsPics
-                            src={element.fields.student1.fields.file.url}
-                          />
-                          <StudentsPics
-                            src={element.fields.student1.fields.file.url}
-                          />
-                          <StudentsPics
-                            src={element.fields.student1.fields.file.url}
-                          />
-                        </StudentsPicsWrapper>
-                        <StudentsInfoWrapper>
-                          <StudentsTitle>{"Students Team"}</StudentsTitle>
-                          <StudentsNames>
-                            {element.fields.studentName4},{""}{" "}
-                            {element.fields.studentName4}, {""}
-                            {element.fields.studentName4}
-                          </StudentsNames>
-                        </StudentsInfoWrapper>
-                      </HeaderStudentWrapper>
-                      <StudentsRev>{element.fields.studentText}</StudentsRev>
-                    </StudentsWrapper>
-                  </StudentsCard>
-                </BottomCards>
-              </ProjectCardWrapper>
-            );
+                  <BottomCards>
+                    <ClientCard>
+                      <ClientWrapper>
+                        <HeaderWrapper>
+                          <ClientPicWrapper>
+                            <ClientPic src={element.fields.clientPic.fields.file.url} />
+                          </ClientPicWrapper>
+                          <ClientInfoWrapper>
+                            <ClientName>{element.fields.clientName}</ClientName>
+                            <ClientPos>{element.fields.clientPos}</ClientPos>
+                          </ClientInfoWrapper>
+                        </HeaderWrapper>
+                        <ClientRev>{element.fields.clientReview}</ClientRev>
+                        <ReviewLink>Read full review</ReviewLink>
+                      </ClientWrapper>
+                    </ClientCard>
+                    <StudentsCard>
+                      <StudentsWrapper>
+                        <HeaderStudentWrapper>
+                          <StudentsPicsWrapper>
+                            <StudentsPics src={element.fields.student1.fields.file.url} />
+                            <StudentsPics src={element.fields.student1.fields.file.url} />
+                            <StudentsPics src={element.fields.student1.fields.file.url} />
+                          </StudentsPicsWrapper>
+                          <StudentsInfoWrapper>
+                            <StudentsTitle>{'Students Team'}</StudentsTitle>
+                            <StudentsNames>{element.fields.studentName4},{''} {element.fields.studentName4}, {''}{element.fields.studentName4}</StudentsNames>
+                          </StudentsInfoWrapper>
+                        </HeaderStudentWrapper>
+                        <StudentsRev>{element.fields.studentText}</StudentsRev>
+                      </StudentsWrapper>
+                    </StudentsCard>
+                  </BottomCards>
+                </ProjectCardWrapper>
+              )
           })
-        ) : (
-          <ProjectCardWrapper>
-            <ProjectCard>
-              <CoverCard>
-                <LinesWrapper>
-                  <Lines shine></Lines>
-                  <Lines shine></Lines>
-                  <Lines shine></Lines>
-                </LinesWrapper>
-              </CoverCard>
-              <CoverCard>
-                <LinesWrapper>
-                  <Lines shine></Lines>
-                  <Lines shine></Lines>
-                  <Lines shine></Lines>
-                </LinesWrapper>
-              </CoverCard>
-            </ProjectCard>
-            <BottomCards>
-              <ClientCard>
-                <LinesWrapper>
-                  <Lines shine></Lines>
-                  <Lines shine></Lines>
-                  <Lines shine></Lines>
-                </LinesWrapper>
-              </ClientCard>
-              <StudentsCard>
-                <LinesWrapper>
-                  <Lines shine></Lines>
-                  <Lines shine></Lines>
-                  <Lines shine></Lines>
-                </LinesWrapper>
-              </StudentsCard>
-            </BottomCards>
-          </ProjectCardWrapper>
-        )}
-      </Wrapper>
-    </>
-  );
-};
+          :
+            <LoadingProjectCards />
+      }
+      <ProjectsBottomLinksWrapper>
+        <ProjectButtonBottom marginb onClick={() => handleLoadMore()}>More projects...</ProjectButtonBottom>
+        <ProjectButtonBottom marginb orange href={"/"}>Delegate a task</ProjectButtonBottom>
+      </ProjectsBottomLinksWrapper>
+    </Wrapper>
+  </>
+  )
+}
 
 export default DataSciencePage;

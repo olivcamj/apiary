@@ -1,5 +1,7 @@
 import styled, { keyframes, css } from "styled-components";
-import { GlobalCard } from "../global-components/global-card/globalCard";
+import { GlobalCard } from '../globalComponents/globalCard/globalCard';
+import { GlobalButton } from '../globalComponents/globalComponents';
+
 
 export const IntroWrapper = styled.div`
   width: 100%;
@@ -138,18 +140,19 @@ export const Image = styled.div`
 // INFO CARDS
 
 export const CardWrapper = styled.div`
-  overflow: visible;
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  margin: 100px auto;
+    overflow: visible;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 100px auto;
+    row-gap: 40px;
 
-  @media screen and (max-width: 400px) {
-    flex-direction: column;
-    margin: 40px auto;
-  }
+    @media screen and (max-width: 400px) {
+        flex-direction: column;
+        margin: 40px auto;
+    }
 `;
 
 export const ProjectPageCard = styled(GlobalCard).attrs({
@@ -887,6 +890,37 @@ export const StudentsRev = styled.p`
     line-height: 20px;
   }
 `;
+
+// BOTTOM BUTTONS
+
+export const ProjectsBottomLinksWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    
+    @media screen and (max-width: 730px) {
+        flex-direction: column;
+        margin: 10px auto;
+    }
+`;
+
+export const ProjectButtonBottom = styled(GlobalButton).attrs({ className: "projectButtonBottom" })`
+    width: 293px;
+
+    @media screen and (max-width: 730px) {
+        margin: 10px auto;
+    }
+    @media screen and (max-width: 400px) {
+        margin: 10px auto;
+        
+        
+    }
+`;
+
+
 
 // KEYFRAMES
 

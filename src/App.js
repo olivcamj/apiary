@@ -6,9 +6,9 @@ import Header from "./components/Header";
 import Useful from "./components/Useful";
 import About from "./components/About";
 import Requests from "./components/Requests";
-import Projects from "./components/Projects/projects";
+import Projects from "./components/Projects/Projects";
 import WhyChoose from "./components/WhyChoose";
-import Footer from "./components/footer/footer";
+import Footer from "./components/Footer";
 import Timeline from "./components/Timeline";
 
 import WebDevPage from "./components/webDevPage/webDevPage";
@@ -18,9 +18,9 @@ import DataSciencePage from "./components/dataSciencePage/dataSciencePage";
 function App() {
   return (
     <div className="app">
+      <Navbar />
       <Switch>
         <Route path="/" exact>
-          <Navbar />
           <Header />
           <Useful />
           <Requests />
@@ -29,7 +29,6 @@ function App() {
           <WhyChoose />
           <Projects />
         </Route>
-
         <Route path="/webdev" component={WebDevPage} exact />
         <Route path="/dataanalysis" component={DataAnalysisPage} exact />
         <Route path="/datascience" component={DataSciencePage} exact />
