@@ -1,16 +1,15 @@
-import styled from 'styled-components';
-import Fade from 'react-reveal/Fade';
-
-import { Wrapper } from './Wrapper';
-import number1 from '../images/circle1.svg';
-import number2 from '../images/circle2.svg';
-import number3 from '../images/circle3.svg';
-import image1 from '../images/checklist.png';
-import image2 from '../images/clarify.png';
-import image3 from '../images/start-tasks.png';
+import styled from "styled-components";
+import TimelineCard from "./TimelineCard";
+import { Wrapper } from "./Wrapper";
+import number1 from "../images/circle1.svg";
+import number2 from "../images/circle2.svg";
+import number3 from "../images/circle3.svg";
+import image1 from "../images/checklist.png";
+import image2 from "../images/clarify.png";
+import image3 from "../images/start-tasks.png";
 
 const Title = styled.h2`
-  font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
+  font-family: "SuisseInti-Book", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 48px;
@@ -22,24 +21,24 @@ const Title = styled.h2`
   width: 100%;
 
   @media screen and (max-width: 600px) {
-      font-size: 34px;
-      line-height: 40px;
+    font-size: 34px;
+    line-height: 40px;
   }
 
   @media screen and (max-width: 400px) {
-      width: 288px; 
-      font-size: 32px;
-      line-height: 37px;
+    width: 288px;
+    font-size: 32px;
+    line-height: 37px;
   }
 `;
 
 const TimelineWrapper = styled.div`
   display: grid;
-  grid-template-columns: minmax(430px,1fr) 140px minmax(430px,1fr);
+  grid-template-columns: minmax(430px, 1fr) 140px minmax(430px, 1fr);
   width: 100%;
 
   @media screen and (max-width: 1200px) {
-    grid-template-columns: minmax(430px,1fr) 80px minmax(430px,1fr);
+    grid-template-columns: minmax(430px, 1fr) 80px minmax(430px, 1fr);
   }
 
   @media screen and (max-width: 1023px) {
@@ -54,13 +53,19 @@ const CardsLeft = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding-bottom: 20%;
+  padding-bottom: 10%;
+  box-sizing: content-box;
+  width: auto;
 
-  @media (min-width: 1024px) and (max-width: 1150px) {
-    padding-bottom: 5%;
+  @media screen and (max-width: 1339px) {
+    padding-bottom: 3%;
   }
 
-  @media screen and (max-width: 1023px) {
+  @media (min-width: 1025px) and (max-width: 1150px) {
+    padding-bottom: 0;
+  }
+
+  @media screen and (max-width: 1024px) {
     align-items: center;
     padding-bottom: 0;
   }
@@ -71,7 +76,11 @@ const CardsRight = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-bottom: 20%;
+  padding-bottom: 10%;
+
+  @media screen and (max-width: 1339px) {
+    padding-bottom: 7%;
+  }
 
   @media (min-width: 1024px) and (max-width: 1150px) {
     padding-bottom: 0;
@@ -79,54 +88,6 @@ const CardsRight = styled.div`
 
   @media screen and (max-width: 1023px) {
     display: none;
-  }
-`;
-
-const Card = styled.div`
-  display: ${props => props.right ? "none" : "flex"};
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 580px;
-  margin: 30px 0;
-
-  @media (min-width: 1024px) and (max-width: 1150px) {
-    margin: 40px 0;
-    max-width: 380px;
-  }
-
-  @media screen and (max-width: 1023px) {
-    display: flex;
-  }
-`;
-
-const CardImage = styled.img`
-  width: 100%;
-`;
-
-const CardNumber = styled.img`
-  width: 40px;
-  height: 40px;
-  display: none;
-
-  @media screen and (max-width: 1023px) {
-    display: block;
-  }
-`;
-
-const CardTitle = styled.h3`
-  font-size: 30px;
-  line-height: 40px;
-  text-align: center;
-  color: #000;
-  margin: 30px 0 30px 0;
-`;
-
-const CardText = styled.p`
-  text-align: center;
-  color: #616161;
-  margin: 0;
 `;
 
 const VerticalTimeline = styled.div`
@@ -136,7 +97,7 @@ const VerticalTimeline = styled.div`
   align-items: center;
   justify-content: center;
   &:after {
-    content:"";
+    content: "";
     position: absolute;
     left: 50%;
     top: 30%;
@@ -167,7 +128,7 @@ const Button = styled.button`
   color: white;
   font-size: 24px;
   line-height: 32px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   overflow: visible;
   &:hover {
@@ -181,34 +142,37 @@ const Button = styled.button`
 
 const Timeline = () => {
   return (
-    <Wrapper>
+    <Wrapper name="timeline">
       <Title>How to start?</Title>
       <TimelineWrapper>
         <CardsLeft>
-          <Fade duration={3000}>
-            <Card>
-              <CardImage src={image1} />
-              <CardNumber src={number1} />
-              <CardTitle>Fill in the checklist</CardTitle>
-              <CardText>So that we can understand your request and how we can help you</CardText>
-            </Card>
-          </Fade>
-          <Fade duration={3000}>
-            <Card right>
-              <CardImage src={image2} />
-              <CardNumber src={number2} />
-              <CardTitle>We will clarify the details and connect the necessary experts</CardTitle>
-              <CardText>We will help you formulate the request so that it&apos;s understandable to our students, and you will receive a high-quality solution in a timely manner</CardText>
-            </Card>
-          </Fade>
-          <Fade duration={3000}>
-            <Card>
-              <CardImage src={image3} />
-              <CardNumber src={number3} />
-              <CardTitle>We will start solving your tasks</CardTitle>
-              <CardText>Practicum by Yandex students will solve the task, then our curators check and correct their solutions. We&apos;ll send you the work. Additionally, if you wish, you may talk to the authors of the best solutions and invite them to join you</CardText>
-            </Card>
-          </Fade>
+          <TimelineCard
+            image={image1}
+            number={number1}
+            title={"Fill in the checklist"}
+            text={
+              "So that we can understand your request and how we can help you"
+            }
+          />
+          <TimelineCard
+            hide={true}
+            image={image2}
+            number={number2}
+            title={
+              "We will clarify the details and connect the necessary experts"
+            }
+            text={
+              "We will help you formulate the request so that it&apos;s understandable to our students, and you will receive a high-quality solution in a timely manner"
+            }
+          />
+          <TimelineCard
+            image={image3}
+            number={number3}
+            title={"We will start solving your tasks"}
+            text={
+              "Practicum by Yandex students will solve the task, then our curators check and correct their solutions. We&apos;ll send you the work. Additionally, if you wish, you may talk to the authors of the best solutions and invite them to join you"
+            }
+          />
         </CardsLeft>
         <VerticalTimeline>
           <TimelineNumber src={number1} />
@@ -216,19 +180,21 @@ const Timeline = () => {
           <TimelineNumber src={number3} />
         </VerticalTimeline>
         <CardsRight>
-          <Fade duration={3000}>
-            <Card remove>
-              <CardImage src={image2} />
-              <CardNumber src={number2} />
-              <CardTitle>We will clarify the details and connect the necessary experts</CardTitle>
-              <CardText>We will help you formulate the request so that it&apos;s understandable to our students, and you will receive a high-quality solution in a timely manner</CardText>
-            </Card>
-          </Fade>
+          <TimelineCard
+            image={image2}
+            number={number2}
+            title={
+              "We will clarify the details and connect the necessary experts"
+            }
+            text={
+              "We will help you formulate the request so that it&apos;s understandable to our students, and you will receive a high-quality solution in a timely manner"
+            }
+          />
         </CardsRight>
       </TimelineWrapper>
       <Button orange>Delegate a task</Button>
     </Wrapper>
-  )
+  );
 };
 
 export default Timeline;

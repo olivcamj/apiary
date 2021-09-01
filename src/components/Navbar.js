@@ -3,8 +3,14 @@ import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../images/practicum-logo.svg";
-import mobileMenu from '../images/ChatIcon.png';
+import mobileMenu from "../images/ChatIcon.png";
 import NavList from "./NavList";
+import { Wrapper } from "./Wrapper";
+
+const NavbarWrapper = styled(Wrapper)`
+  padding-top: 0;
+  padding-bottom: 0;
+`;
 
 const Container = styled.nav`
   margin: 0 auto;
@@ -17,14 +23,14 @@ const Container = styled.nav`
   position: relative;
   z-index: 2;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1100px) {
     padding-top: 42px;
     max-width: 944px;
     min-height: 25px;
     height: 100%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 980px) {
     padding-top: 25px;
     max-width: calc(100% - 40px);
     flex-direction: column;
@@ -39,11 +45,10 @@ const Container = styled.nav`
 const StyledLink = styled(Link)`
   width: 180px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1100px) {
     width: 137px;
   }
 `;
-
 
 const Logo = styled.div`
   margin-top: 5px;
@@ -53,13 +58,13 @@ const Logo = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1100px) {
     width: 137px;
     height: 25px;
   }
 
   .logo-link {
-    width: 180px
+    width: 180px;
   }
 `;
 
@@ -128,6 +133,7 @@ const Button = styled.button`
   line-height: 20px;
   text-align: center;
   color: #f90;
+  transition: all 0.2s ease-in-out;
 
   :hover {
     background-color: #f90;
@@ -147,9 +153,9 @@ const Button = styled.button`
     align-self: center;
   }
 
-   @media (max-width: 325px) {
+  @media (max-width: 325px) {
     margin-top: 70px;
-   }
+  }
 `;
 
 const Navbar = () => {
@@ -157,7 +163,7 @@ const Navbar = () => {
   const [windowSize, setWindowSize] = useState({ width: undefined });
   const [isOpen, setIsOpen] = useState(false);
   let location = useLocation();
-  
+
   function handleWindowResize() {
     useEffect(() => {
       function handleWindowSizeChange() {
@@ -177,35 +183,37 @@ const Navbar = () => {
   }
 
   let size = handleWindowResize();
-  let isMobile = size.width <= 768;
- 
+  let isMobile = size.width <= 980;
+
   function openMenu() {
     setIsOpen(!isOpen);
   }
 
   return (
-    <Container role="navigation" aria-label="main navigation">
-      <StyledLink to="/">
-        <Logo role="button" aria-label="home" /> 
-      </StyledLink>
-      {isMobile && (
-        <MobileNav>
-          <MobileMenu
-            onClick={openMenu}
-            className={`${isOpen ? "is-active" : null }`}
-            aria-expanded="false"
-            role="button"
-            aria-label="menu"
-          />
-        </MobileNav>
-      )}
-      {(!isMobile || isOpen) &&
-        <>
-          <NavList location={location} />
-          <Button>Delegate a task</Button>
-        </>
-      } 
-    </Container>
+    <NavbarWrapper>
+      <Container role="navigation" aria-label="main navigation" id="navbar">
+        <StyledLink to="/">
+          <Logo role="button" aria-label="home" />
+        </StyledLink>
+        {isMobile && (
+          <MobileNav>
+            <MobileMenu
+              onClick={openMenu}
+              className={`${isOpen ? "is-active" : null}`}
+              aria-expanded="false"
+              role="button"
+              aria-label="menu"
+            />
+          </MobileNav>
+        )}
+        {(!isMobile || isOpen) && (
+          <>
+            <NavList location={location} />
+            <Button>Delegate a task</Button>
+          </>
+        )}
+      </Container>
+    </NavbarWrapper>
   );
 };
 

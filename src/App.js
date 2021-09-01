@@ -1,21 +1,19 @@
-import './App.css';
+import "./App.css";
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import Useful from "./components/Useful";
+import About from "./components/About";
+import Requests from "./components/Requests";
+import Projects from "./components/Projects/Projects";
+import WhyChoose from "./components/WhyChoose";
+import Footer from "./components/Footer";
+import Timeline from "./components/Timeline";
 
-import Navbar from './components/Navbar';
-import Header from './components/Header';
-import Useful from './components/Useful/Useful';
-import Bubble from './components/bubble/bubble';
-import Requests from './components/requests/requests';
-import Projects from './components/projects/projects';
-import About from './components/About';
-import Footer from './components/footer/footer';
-// import Start from './components/Start/Start';
-import Timeline from './components/Timeline';
-
-import WebDevPage from './components/webDevPage/webDevPage';
-import DataAnalysisPage from './components/dataAnalysisPage/dataAnalysisPage';
-import DataSciencePage from './components/dataSciencePage/dataSciencePage';
+import WebDevPage from "./components/webDevPage/webDevPage";
+import DataAnalysisPage from "./components/dataAnalysisPage/dataAnalysisPage";
+import DataSciencePage from "./components/dataSciencePage/dataSciencePage";
 
 function App() {
   return (
@@ -26,15 +24,14 @@ function App() {
           <Header />
           <Useful />
           <Requests />
-          <Bubble />
-          {/* <Start /> */}
-          <Timeline />
           <About />
+          <Timeline />
+          <WhyChoose />
           <Projects />
         </Route>
         <Route path="/webdev" component={WebDevPage} exact />
         <Route path="/dataanalysis" component={DataAnalysisPage} exact />
-        <Route path="/dataScience" component={DataSciencePage} exact />
+        <Route path="/datascience" component={DataSciencePage} exact />
       </Switch>
       <Footer />
     </div>

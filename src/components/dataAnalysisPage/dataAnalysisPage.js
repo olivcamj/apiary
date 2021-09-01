@@ -1,6 +1,7 @@
 import React from 'react';
-import { Wrapper } from "../Wrapper"
-import { ProjectsBottomLinksWrapper, ProjectButtonBottom, IntroWrapper, Title, TextIntro, ImageWrapper, Image, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectCardWrapper, TextWrapper, ProjectCover, ProjectInfoWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, ReviewLink, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, HeaderStudentWrapper, Lines, LinesWrapper, CardWrapper, ProjectPageCard, ProjectPageCardTitle, ProjectPageCardNumber, ProjectPageCardText, ProjectsIntroWrapper, TextIntroWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro } from './dataAnalysisPage.styles';
+import { Wrapper } from '../Wrapper';
+import LoadingProjectCards from '../Projects/LoadingProjectCards';
+import { ProjectsBottomLinksWrapper, ProjectButtonBottom, IntroWrapper, Title, TextIntro, ImageWrapper, Image, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectCardWrapper, TextWrapper, ProjectCover, ProjectInfoWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, ReviewLink, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, HeaderStudentWrapper, CardWrapper, ProjectPageCard, ProjectPageCardTitle, ProjectPageCardNumber, ProjectPageCardText, ProjectsIntroWrapper, TextIntroWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro } from './dataAnalysisPage.styles';
 
 import image1 from '../../images/web-dev.png';
 import imageIntro from '../../images/projects-intro.png';
@@ -8,8 +9,8 @@ import imageIntro from '../../images/projects-intro.png';
 import { client } from '../../helper/client';
 
 const DataAnalysisPage = () => {
-    const [isLoaded, setIsLoaded] = React.useState(false);
-    const [projectData, setProjectData] = React.useState({});
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  const [projectData, setProjectData] = React.useState({});
 
 
     const [indexShow, setIndexShow] = React.useState(2);
@@ -25,9 +26,9 @@ const DataAnalysisPage = () => {
             })
     }
 
-    React.useEffect(() => {
-        contentfullData('dataAnalysisProjects')
-    }, []);
+  React.useEffect(() => {
+    contentfullData("dataAnalysisProjects");
+  }, []);
 
     const projectContent = projectData;
     return (
@@ -71,7 +72,6 @@ const DataAnalysisPage = () => {
                     <ImageIntroWrapper>
                         <ImageProjectIntro src={imageIntro} />
                     </ImageIntroWrapper>
-
                 </ProjectsIntroWrapper>
 
                 {isLoaded
@@ -136,45 +136,47 @@ const DataAnalysisPage = () => {
                         )
                     })
                     :
-                    <ProjectCardWrapper>
-                        <ProjectCard>
-                            <CoverCard>
-                                <LinesWrapper>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                </LinesWrapper>
-                            </CoverCard>
-                            <CoverCard>
-                                <LinesWrapper>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                </LinesWrapper>
-                            </CoverCard>
-                        </ProjectCard>
-                        <BottomCards>
-                            <ClientCard>
-                                <LinesWrapper>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                </LinesWrapper>
-                            </ClientCard>
-                            <StudentsCard>
-                                <LinesWrapper>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                </LinesWrapper>
-                            </StudentsCard>
-                        </BottomCards>
-                    </ProjectCardWrapper>
+                        <LoadingProjectCards />
+                    // <ProjectCardWrapper>
+                    //     <ProjectCard>
+                    //         <CoverCard>
+                    //             <LinesWrapper>
+                    //                 <Lines shine></Lines>
+                    //                 <Lines shine></Lines>
+                    //                 <Lines shine></Lines>
+                    //             </LinesWrapper>
+                    //         </CoverCard>
+                    //         <CoverCard>
+                    //             <LinesWrapper>
+                    //                 <Lines shine></Lines>
+                    //                 <Lines shine></Lines>
+                    //                 <Lines shine></Lines>
+                    //             </LinesWrapper>
+                    //         </CoverCard>
+                    //     </ProjectCard>
+                    //     <BottomCards>
+                    //         <ClientCard>
+                    //             <LinesWrapper>
+                    //                 <Lines shine></Lines>
+                    //                 <Lines shine></Lines>
+                    //                 <Lines shine></Lines>
+                    //             </LinesWrapper>
+                    //         </ClientCard>
+                    //         <StudentsCard>
+                    //             <LinesWrapper>
+                    //                 <Lines shine></Lines>
+                    //                 <Lines shine></Lines>
+                    //                 <Lines shine></Lines>
+                    //             </LinesWrapper>
+                    //         </StudentsCard>
+                    //     </BottomCards>
+                    // </ProjectCardWrapper>
                 }
                 <ProjectsBottomLinksWrapper>
                     <ProjectButtonBottom marginb onClick={() => handleLoadMore()}>More projects...</ProjectButtonBottom>
                     <ProjectButtonBottom marginb orange href={"/"}>Delegate a task</ProjectButtonBottom>
                 </ProjectsBottomLinksWrapper>
+        
             </Wrapper>
         </>
     )

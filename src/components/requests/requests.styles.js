@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GlobalCard } from '../global-components/global-card/globalCard';
+import { GlobalCard } from '../globalComponents/globalCard/globalCard';
 
 import { Link } from 'react-router-dom';
 

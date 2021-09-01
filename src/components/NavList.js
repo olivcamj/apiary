@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { Link as LinkTo } from 'react-router-dom';
-import { Link } from 'react-scroll';
-import styled from 'styled-components';
+import { Link as LinkTo } from "react-router-dom";
+import { Link } from "react-scroll";
+import styled from "styled-components";
 
 const List = styled.ul`
   margin: 0 auto;
@@ -38,6 +38,7 @@ const ListItem = styled.li`
   color: #616161;
   text-decoration: none;
   text-align: center;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     color: #000;
@@ -86,7 +87,7 @@ const ListItem = styled.li`
 `;
 
 const StyledLink = styled(Link)`
-  width: auto
+  width: auto;
 `;
 
 const NavList = ({ location }) => {
@@ -103,7 +104,7 @@ const NavList = ({ location }) => {
         </StyledLink>
       </ListItem>
       <ListItem>
-        <StyledLink to="start" smooth={true}>
+        <StyledLink to="timeline" smooth={true}>
           How to Start
         </StyledLink>
       </ListItem>

@@ -1,17 +1,17 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
   max-width: 1280px;
   padding: 0;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   background-color: #fff;
 
   &.dark {
-    background-color: #1A1B22;
+    background-color: #1a1b22;
     color: #fff;
   }
 
@@ -22,7 +22,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
+  font-family: "SuisseInti-Book", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 48px;
@@ -34,21 +34,21 @@ const Title = styled.h2`
   width: 100%;
 
   @media screen and (max-width: 600px) {
-      font-size: 34px;
-      line-height: 40px;
-      text-align: left;
+    font-size: 34px;
+    line-height: 40px;
+    text-align: left;
   }
 
   @media screen and (max-width: 400px) {
-      width: 288px; 
-      font-size: 32px;
-      line-height: 37px;
+    width: 288px;
+    font-size: 32px;
+    line-height: 37px;
   }
 `;
 
 const Intro = styled.p`
   max-width: 840px;
-  font-family: 'SuisseInti-Book', 'Helvetica', sans-serif;
+  font-family: "SuisseInti-Book", "Helvetica", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -58,9 +58,9 @@ const Intro = styled.p`
   margin: 40px auto 80px auto;
 
   @media screen and (max-width: 600px) {
-      font-size: 20px;
-      line-height: 30px;
-      text-align: left;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: left;
   }
 `;
 
@@ -74,7 +74,7 @@ const CardWrapper = styled.div`
   margin: 0;
 
   @media screen and (max-width: 400px) {
-      flex-direction: column;
+    flex-direction: column;
   }
 `;
 
@@ -83,11 +83,9 @@ const CardBlock = ({ title, intro, cards, color }) => {
     <Container className={color}>
       <Title>{title}</Title>
       <Intro>{intro}</Intro>
-      <CardWrapper>
-        {cards}
-      </CardWrapper>
+      <CardWrapper>{cards}</CardWrapper>
     </Container>
-  )
-}
+  );
+};
 
 export default CardBlock;

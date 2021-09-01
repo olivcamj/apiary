@@ -1,15 +1,16 @@
 import React from 'react';
 import { Wrapper } from "../Wrapper"
-import { ProjectsBottomLinksWrapper, ProjectButtonBottom, IntroWrapper, Title, TextIntro, ImageWrapper, Image, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectCardWrapper, TextWrapper, ProjectCover, ProjectInfoWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, ReviewLink, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, HeaderStudentWrapper, Lines, LinesWrapper, CardWrapper, ProjectPageCard, ProjectPageCardTitle, ProjectPageCardNumber, ProjectPageCardText, ProjectsIntroWrapper, TextIntroWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro } from './webDevPage.styles';
+import LoadingProjectCards from '../Projects/LoadingProjectCards';
+import { ProjectsBottomLinksWrapper, ProjectButtonBottom, IntroWrapper, Title, TextIntro, ImageWrapper, Image, CoverCard, ProjectCard, BottomCards, ClientCard, StudentsCard, ProjectCardWrapper, TextWrapper, ProjectCover, ProjectInfoWrapper, ProjectTitle, ProjectIntro, ProjectDate, ProjectLink, ClientWrapper, HeaderWrapper, ClientPic, ClientName, ClientPos, ClientRev, ClientPicWrapper, ClientInfoWrapper, ReviewLink, StudentsWrapper, StudentsPicsWrapper, StudentsPics, StudentsInfoWrapper, StudentsTitle, StudentsNames, StudentsRev, HeaderStudentWrapper, CardWrapper, ProjectPageCard, ProjectPageCardTitle, ProjectPageCardNumber, ProjectPageCardText, ProjectsIntroWrapper, TextIntroWrapper, ImageIntroWrapper, ProjectIntroTitle, ProjectIntroText, ImageProjectIntro } from './webDevPage.styles';
 
-import image1 from '../../images/web-dev.png';
-import imageIntro from '../../images/projects-intro.png';
+import image1 from "../../images/web-dev.png";
+import imageIntro from "../../images/projects-intro.png";
 
-import { client } from '../../helper/client';
+import { client } from "../../helper/client";
 
 const WebDevPage = () => {
-    const [isLoaded, setIsLoaded] = React.useState(false);
-    const [projectData, setProjectData] = React.useState({});
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  const [projectData, setProjectData] = React.useState({});
 
     const [indexShow, setIndexShow] = React.useState(2);
 
@@ -25,9 +26,9 @@ const WebDevPage = () => {
             })
     }
 
-    React.useEffect(() => {
-        contentfullData('projects')
-    }, []);
+  React.useEffect(() => {
+    contentfullData("projects");
+  }, []);
 
     const projectContent = projectData;
     return (
@@ -71,7 +72,6 @@ const WebDevPage = () => {
                     <ImageIntroWrapper>
                         <ImageProjectIntro src={imageIntro} />
                     </ImageIntroWrapper>
-
                 </ProjectsIntroWrapper>
 
                 {isLoaded
@@ -136,40 +136,7 @@ const WebDevPage = () => {
                         )
                     })
                     :
-                    <ProjectCardWrapper>
-                        <ProjectCard>
-                            <CoverCard>
-                                <LinesWrapper>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                </LinesWrapper>
-                            </CoverCard>
-                            <CoverCard>
-                                <LinesWrapper>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                </LinesWrapper>
-                            </CoverCard>
-                        </ProjectCard>
-                        <BottomCards>
-                            <ClientCard>
-                                <LinesWrapper>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                </LinesWrapper>
-                            </ClientCard>
-                            <StudentsCard>
-                                <LinesWrapper>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                    <Lines shine></Lines>
-                                </LinesWrapper>
-                            </StudentsCard>
-                        </BottomCards>
-                    </ProjectCardWrapper>
+                        <LoadingProjectCards />
                 }
                 <ProjectsBottomLinksWrapper>
                     <ProjectButtonBottom marginb onClick={() => handleLoadMore()}>More projects...</ProjectButtonBottom>
