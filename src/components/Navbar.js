@@ -190,7 +190,7 @@ const Navbar = () => {
   }
 
   return (
-    <NavbarWrapper>
+    <NavbarWrapper id='navbar'>
       <Container role="navigation" aria-label="main navigation" id="navbar">
         <StyledLink to="/">
           <Logo role="button" aria-label="home" />

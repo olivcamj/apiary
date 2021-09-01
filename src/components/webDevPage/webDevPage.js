@@ -9,12 +9,12 @@ import imageIntro from "../../images/projects-intro.png";
 import { client } from "../../helper/client";
 
 const WebDevPage = () => {
-  const [isLoaded, setIsLoaded] = React.useState(false);
-  const [projectData, setProjectData] = React.useState({});
+    const [isLoaded, setIsLoaded] = React.useState(false);
+    const [projectData, setProjectData] = React.useState({});
 
     const [indexShow, setIndexShow] = React.useState(2);
 
-    function handleLoadMore () {
+    function handleLoadMore() {
         setIndexShow(indexShow + 2);
     }
 
@@ -26,9 +26,9 @@ const WebDevPage = () => {
             })
     }
 
-  React.useEffect(() => {
-    contentfullData("projects");
-  }, []);
+    React.useEffect(() => {
+        contentfullData("projects");
+    }, []);
 
     const projectContent = projectData;
     return (
@@ -136,7 +136,7 @@ const WebDevPage = () => {
                         )
                     })
                     :
-                        <LoadingProjectCards />
+                    <LoadingProjectCards />
                 }
                 <ProjectsBottomLinksWrapper>
                     <ProjectButtonBottom marginb onClick={() => handleLoadMore()}>More projects...</ProjectButtonBottom>

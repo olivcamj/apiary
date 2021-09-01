@@ -1,3 +1,6 @@
+import React from 'react';
+import { useLocation } from "react-router-dom";
+
 import "./App.css";
 
 import { Route, Switch } from "react-router-dom";
@@ -16,6 +19,13 @@ import DataAnalysisPage from "./components/dataAnalysisPage/dataAnalysisPage";
 import DataSciencePage from "./components/dataSciencePage/dataSciencePage";
 
 function App() {
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+
   return (
     <div className="app">
       <Navbar />
