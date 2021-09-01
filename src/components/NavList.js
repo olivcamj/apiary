@@ -90,6 +90,20 @@ const StyledLink = styled(Link)`
   width: auto;
 `;
 
+const LinkToHome = styled(LinkTo)`
+  width: 140px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #616161;
+  text-decoration: none;
+  &:hover {
+    color: #000;
+    cursor: pointer;
+  }
+`;
+
 const NavList = ({ location }) => {
   return location.pathname === "/" ? (
     <List>
@@ -121,12 +135,12 @@ const NavList = ({ location }) => {
     </List>
   ) : (
     <List>
-      <ListItem>
-        <LinkTo to="/" className="link-to">
+      <ListItem style={{width: 'auto', maxWidth: '140px'}}>
+        <LinkToHome to="/" className="link-to">
           Back to homepage
-        </LinkTo>
+        </LinkToHome>
       </ListItem>
-      <ListItem>Students&apos; projects</ListItem>
+      <ListItem style={{width: 'auto', maxWidth: '140px'}}>Student&apos;s projects</ListItem>
     </List>
   );
 };
